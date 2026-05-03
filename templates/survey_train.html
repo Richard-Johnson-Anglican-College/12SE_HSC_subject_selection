@@ -14,7 +14,7 @@
   <h2>Interest Questionnaire (Training Data)</h2>
   <p>Answer the following 12 questions to help our AI learn the typical profiles of students taking specific subjects.</p>
 
-  <form action="{{ url_for('survey_train') }}" method="POST" onsubmit="showLoading()">
+  <form action="{{ url_for('survey_train') }}" method="POST">
 
     <div class="question card">
       <label for="q1"><i class="dp-icon fas fa-puzzle-piece"></i>1. Logic Puzzle (1-10)</label>
@@ -131,7 +131,7 @@
 
     <hr>
     <h3><i class="dp-icon fas fa-bullseye"></i>Your Actual Choices (Training Data)</h3>
-    <p>Tick every subject you are currently studying. Select at least 6.</p>
+    <p>Tick every subject you are currently studying. Select at least 5.</p>
     <p id="checkbox-counter" style="font-weight:600; color: var(--pico-muted-color);">0 subjects selected</p>
 
     <div class="subject-checkbox-grid">
@@ -220,18 +220,20 @@
     function updateCounter() {
       const checked = document.querySelectorAll('input[name="target_subjects"]:checked').length;
       counter.textContent = checked + ' subject' + (checked !== 1 ? 's' : '') + ' selected';
-      counter.style.color = checked >= 6 ? '#22c55e' : 'var(--pico-muted-color)';
+      counter.style.color = checked >= 5 ? '#22c55e' : 'var(--pico-muted-color)';
     }
 
     checkboxes.forEach(cb => cb.addEventListener('change', updateCounter));
 
-    // Validate minimum 6 subjects on submit
+    // Validate minimum 5 subjects on submit
     document.querySelector('form').addEventListener('submit', function(e) {
       const checked = document.querySelectorAll('input[name="target_subjects"]:checked').length;
-      if (checked < 6) {
+      if (checked < 5) {
         e.preventDefault();
-        alert('Please select at least 6 subjects before submitting.');
+        alert('Please select at least 5 subjects before submitting.');
+        return;
       }
+      showLoading();
     });
   </script>
 {% endblock %}

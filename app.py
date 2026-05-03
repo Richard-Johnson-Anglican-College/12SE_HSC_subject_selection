@@ -67,8 +67,8 @@ def survey_train():
         target_subjects = request.form.getlist('target_subjects')
         satisfaction = int(request.form.get('satisfaction_score', 5))
 
-        if len(target_subjects) < 6:
-            flash('Please select at least 6 subjects.', 'error')
+        if len(target_subjects) < 5:
+            flash('Please select at least 5 subjects.', 'error')
             return redirect(url_for('survey_train'))
 
         student_id = dh.append_training_row(answers, target_subjects, satisfaction)
