@@ -60,13 +60,13 @@ The application uses a hybrid approach:
 ## 7. Subject Clusters (Target Labels)
 The model classifies recommendations into these refined categories:
 
-* **STEM:** Mathematics (Standard/Adv/Ext), Biology, Chemistry, Physics, Software Engineering, Computing Technology, Engineering Studies, Design & Technology.
-* **Humanities & Social Sciences (HSIE):** Modern History, Ancient History, Legal Studies, Business Studies, Economics, Geography, Society & Culture.
-* **Creative Arts:** Visual Arts, Music (1/2/Ext), Drama.
-* **English:** Standard, Advanced, Extension 1 & 2.
-* **PDHPE & Community Services:** Health and Movement Science, Community and Family Studies (CAFS).
-* **TAS (Industrial & Vocational):** Industrial Technology (Timber, Graphics, Multimedia), Hospitality (VET).
-* **Languages:** Various Beginners, Continuers, and Extension levels.
+* **HSIE:** Ancient History, Biblical Studies, Business Studies, Commerce, Community and Family Studies, Economics, Geography, Legal Studies, School of Languages, Society and Culture.
+* **TAS:** Design and Technology, Engineering Studies, Food Technology, Hospitality, Industrial Technology Multimedia, Industrial Technology Timber.
+* **Visual and Performing Arts:** Drama, Music, Visual Arts.
+* **English:** English Advanced, English Extension, English Standard.
+* **Maths:** Mathematics Advanced, Mathematics Extension 1, Mathematics Extension 2, Mathematics Standard, Software Engineering.
+* **Science:** Biology, Physics.
+* **PDHPE:** Health and Movement Science.
 
 ## 8. Data Model (CSV Schema)
 `student_id, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, target_subject_1, target_subject_2, target_subject_3, target_subject_4, target_subject_5, target_subject_6, target_subject_7, satisfaction_score`

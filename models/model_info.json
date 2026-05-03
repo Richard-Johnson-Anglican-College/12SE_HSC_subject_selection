@@ -1,0 +1,17 @@
+{
+  "version": "1.7",
+  "trained_at": "2026-05-03T18:26:32",
+  "record_count": 101,
+  "accuracy": 0.8095,
+  "r2": 0.7687,
+  "clusters": [
+    "English",
+    "HSIE",
+    "Maths",
+    "PDHPE",
+    "Science",
+    "TAS",
+    "Visual and Performing Arts"
+  ],
+  "log": "Loading training_data.csv...  101 records found.\nPerforming 80/20 train-test split...\nTraining Random Forest Classifier (trees=50)...  Accuracy: 80.95%\nTraining Polynomial Regressor (degree=2)...  R\u00b2: 0.7687\nSaving models to models/  \u2713\nGenerating visualisation charts...  \u2713\nComplete. Model v1.7 saved."
+}

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}HSC Subject Recommendation Engine | Your Results{% endblock %}
+
+{% block content %}
+  <nav>
+    <ul><li><strong>HSC Subject Recommendation Engine</strong></li></ul>
+    <ul><li><a href="{{ url_for('index') }}">Start Over</a></li></ul>
+  </nav>
+
+  <header>
+    <h1>Your Subject Match Results</h1>
+    <p>Based on our AI model trained by Year 11–12 students, here is what we found.</p>
+  </header>
+
+  <div class="grid">
+    <div class="card">
+      <header><i class="dp-icon fas fa-star"></i>Recommended Cluster</header>
+      <h2>{{ cluster }}</h2>
+      <hr>
+      <h4>Ranked Subjects in Cluster:</h4>
+      <ol>
+        {% for subject in subjects %}
+        <li>
+          <a href="#" onclick="event.preventDefault(); document.getElementById('modal-{{ loop.index }}').showModal();">
+            {{ subject.name }}
+          </a>
+        </li>
+        {% else %}
+        <li>Subjects will appear here after ML integration.</li>
+        {% endfor %}
+      </ol>
+    </div>
+
+    <div class="card">
+      <header><i class="dp-icon fas fa-chart-pie"></i>Match Percentage</header>
+      <h2>{{ match_pct }}%</h2>
+      <progress value="{{ match_pct }}" max="100"></progress>
+      <small>
+        <strong>What this means:</strong> {{ match_pct }}% of older students with interests very similar to yours reported being highly satisfied after choosing these subjects. This indicates a strong chance you will enjoy this pathway too!
+      </small>
+    </div>
+  </div>
+
+  <div class="card">
+    <header><i class="dp-icon fas fa-magic"></i>Why this fits you (AI Analysis)</header>
+    <blockquote>
+      <p>{{ gemini_summary }}</p>
+      <footer>— Synthesised by Gemini AI</footer>
+    </blockquote>
+  </div>
+
+  {% if chart_url %}
+  <div class="card">
+    <header><i class="dp-icon fas fa-chart-bar"></i>Feature Match Visualisation</header>
+    <figure>
+      <img src="{{ chart_url }}" alt="Matplotlib visual match report">
+      <figcaption>How your specific interests align with the {{ cluster }} cohort.</figcaption>
+    </figure>
+  </div>
+  {% endif %}
+
+  {# Subject detail modals — rendered dynamically from subjects list #}
+  {% for subject in subjects %}
+  <dialog id="modal-{{ loop.index }}">
+    <article>
+      <header>
+        <a href="#close" aria-label="Close" class="close"
+           onclick="event.preventDefault(); document.getElementById('modal-{{ loop.index }}').close();"></a>
+        {{ subject.name }}
+      </header>
+      <p>{{ subject.description }}</p>
+    </article>
+  </dialog>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,250 @@
+{% extends "base.html" %}
+{% from "macros.html" import subject_select %}
+{% block title %}HSC Subject Recommendation Engine | Provide Training Data{% endblock %}
+
+{% block head %}
+<style>.question { margin-bottom: 2rem; }</style>
+{% endblock %}
+
+{% block content %}
+  <nav>
+    <ul><li><strong>HSC Subject Recommendation Engine</strong></li></ul>
+    <ul><li><a href="{{ url_for('index') }}">Back to Home</a></li></ul>
+  </nav>
+  <h2>Interest Questionnaire (Training Data)</h2>
+  <p>Answer the following 12 questions to help our AI learn the typical profiles of students taking specific subjects.</p>
+
+  <form action="{{ url_for('survey_train') }}" method="POST" onsubmit="showLoading()">
+
+    <div class="question card">
+      <label for="q1"><i class="dp-icon fas fa-puzzle-piece"></i>1. Logic Puzzle (1-10)</label>
+      <small>How much do you enjoy abstract math and solving logical puzzles?</small>
+      <div class="slider-wrapper">
+        <input type="range" min="1" max="10" value="5" id="q1" name="q1" oninput="this.nextElementSibling.textContent = this.value">
+        <span class="slider-value">5</span>
+      </div>
+
+    </div>
+
+    <div class="question card">
+      <label><i class="dp-icon fas fa-book-open"></i>2. Narrative Thread (1-5)</label>
+      <small>How much do you enjoy writing stories or analysing literature?</small>
+      <select id="q2" name="q2" required>
+        <option value="" selected disabled>Select an option...</option>
+        <option value="1">1 - Not at all</option>
+        <option value="2">2 - A little</option>
+        <option value="3">3 - Neutral</option>
+        <option value="4">4 - Quite a bit</option>
+        <option value="5">5 - Love it</option>
+      </select>
+    </div>
+
+    <div class="question card">
+      <fieldset>
+        <legend><i class="dp-icon fas fa-tools"></i>3. Creator's Tool</legend>
+        <small>I enjoy physically building, crafting, or making things.</small>
+        <label><input type="radio" name="q3" value="1" required> Yes</label>
+        <label><input type="radio" name="q3" value="0"> No</label>
+      </fieldset>
+    </div>
+
+    <div class="question card">
+      <label for="q4"><i class="dp-icon fas fa-microphone"></i>4. Spotlight Factor (1-10)</label>
+      <small>How comfortable are you with live performance or presenting in front of a crowd?</small>
+      <div class="slider-wrapper">
+        <input type="range" min="1" max="10" value="5" id="q4" name="q4" oninput="this.nextElementSibling.textContent = this.value">
+        <span class="slider-value">5</span>
+      </div>
+
+    </div>
+
+    <div class="question card">
+      <fieldset>
+        <legend><i class="dp-icon fas fa-dna"></i>5. Human Machine (1-5)</legend>
+        <small>How fascinated are you by biology, anatomy, and how the body works?</small>
+        <label><input type="radio" name="q5" value="1" required> 1</label>
+        <label><input type="radio" name="q5" value="2"> 2</label>
+        <label><input type="radio" name="q5" value="3"> 3</label>
+        <label><input type="radio" name="q5" value="4"> 4</label>
+        <label><input type="radio" name="q5" value="5"> 5</label>
+      </fieldset>
+    </div>
+
+    <div class="question card">
+      <fieldset>
+        <legend><i class="dp-icon fas fa-lightbulb"></i>6. Entrepreneurial Spirit</legend>
+        <small>I am interested in business, markets, and how money works.</small>
+        <label><input type="radio" name="q6" value="1" required> Yes</label>
+        <label><input type="radio" name="q6" value="0"> No</label>
+      </fieldset>
+    </div>
+
+    <div class="question card">
+      <label for="q7"><i class="dp-icon fas fa-laptop-code"></i>7. Digital Architect (1-10)</label>
+      <small>How interested are you in coding, computers, and how technology works?</small>
+      <div class="slider-wrapper">
+        <input type="range" min="1" max="10" value="5" id="q7" name="q7" oninput="this.nextElementSibling.textContent = this.value">
+        <span class="slider-value">5</span>
+      </div>
+
+    </div>
+
+    <div class="question card">
+      <fieldset>
+        <legend><i class="dp-icon fas fa-palette"></i>8. Visual Eye (1-5)</legend>
+        <small>How much do you prefer visual design, drawing, and arts?</small>
+        <label><input type="radio" name="q8" value="1" required> 1</label>
+        <label><input type="radio" name="q8" value="2"> 2</label>
+        <label><input type="radio" name="q8" value="3"> 3</label>
+        <label><input type="radio" name="q8" value="4"> 4</label>
+        <label><input type="radio" name="q8" value="5"> 5</label>
+      </fieldset>
+    </div>
+
+    <div class="question card">
+      <label for="q9"><i class="dp-icon fas fa-users"></i>9. Social Observer (1-10)</label>
+      <small>How interested are you in history, social issues, or law?</small>
+      <div class="slider-wrapper">
+        <input type="range" min="1" max="10" value="5" id="q9" name="q9" oninput="this.nextElementSibling.textContent = this.value">
+        <span class="slider-value">5</span>
+      </div>
+
+    </div>
+
+    <div class="question card">
+      <fieldset>
+        <legend><i class="dp-icon fas fa-flask"></i>10. Lab Experiment</legend>
+        <small>I enjoy conducting scientific experiments and following the scientific method.</small>
+        <label><input type="radio" name="q10" value="1" required> Yes</label>
+        <label><input type="radio" name="q10" value="0"> No</label>
+      </fieldset>
+    </div>
+
+    <div class="question card">
+      <fieldset>
+        <legend><i class="dp-icon fas fa-utensils"></i>11. Culinary Interest (1-5)</legend>
+        <small>How interested are you in food technology and hospitality?</small>
+        <label><input type="radio" name="q11" value="1" required> 1</label>
+        <label><input type="radio" name="q11" value="2"> 2</label>
+        <label><input type="radio" name="q11" value="3"> 3</label>
+        <label><input type="radio" name="q11" value="4"> 4</label>
+        <label><input type="radio" name="q11" value="5"> 5</label>
+      </fieldset>
+    </div>
+
+    <div class="question card">
+      <label for="q12"><i class="dp-icon fas fa-cogs"></i>12. Systems Thinker (1-10)</label>
+      <small>How much do you focus on processes, systems, and finding systematic solutions?</small>
+      <div class="slider-wrapper">
+        <input type="range" min="1" max="10" value="5" id="q12" name="q12" oninput="this.nextElementSibling.textContent = this.value">
+        <span class="slider-value">5</span>
+      </div>
+
+    </div>
+
+    <hr>
+    <h3><i class="dp-icon fas fa-bullseye"></i>Your Actual Choices (Training Data)</h3>
+    <p>Tick every subject you are currently studying. Select at least 6.</p>
+    <p id="checkbox-counter" style="font-weight:600; color: var(--pico-muted-color);">0 subjects selected</p>
+
+    <div class="subject-checkbox-grid">
+
+      <div class="cluster-block card">
+        <h4 class="cluster-heading"><i class="dp-icon fas fa-book-open"></i>English</h4>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="English Advanced"> English Advanced</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="English Extension"> English Extension</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="English Standard"> English Standard</label>
+      </div>
+
+      <div class="cluster-block card">
+        <h4 class="cluster-heading"><i class="dp-icon fas fa-globe-asia"></i>HSIE</h4>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Ancient History"> Ancient History</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Biblical Studies"> Biblical Studies</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Business Studies"> Business Studies</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Commerce"> Commerce</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Community and Family Studies"> Community and Family Studies</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Economics"> Economics</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Geography"> Geography</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Legal Studies"> Legal Studies</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="School of Languages"> School of Languages</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Society and Culture"> Society and Culture</label>
+      </div>
+
+      <div class="cluster-block card">
+        <h4 class="cluster-heading"><i class="dp-icon fas fa-square-root-alt"></i>Maths</h4>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Mathematics Advanced"> Mathematics Advanced</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Mathematics Extension 1"> Mathematics Extension 1</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Mathematics Extension 2"> Mathematics Extension 2</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Mathematics Standard"> Mathematics Standard</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Software Engineering"> Software Engineering</label>
+      </div>
+
+      <div class="cluster-block card">
+        <h4 class="cluster-heading"><i class="dp-icon fas fa-running"></i>PDHPE</h4>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Health and Movement Science"> Health and Movement Science</label>
+      </div>
+
+      <div class="cluster-block card">
+        <h4 class="cluster-heading"><i class="dp-icon fas fa-flask"></i>Science</h4>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Biology"> Biology</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Physics"> Physics</label>
+      </div>
+
+      <div class="cluster-block card">
+        <h4 class="cluster-heading"><i class="dp-icon fas fa-tools"></i>TAS</h4>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Design and Technology"> Design and Technology</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Engineering Studies"> Engineering Studies</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Food Technology"> Food Technology</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Hospitality"> Hospitality</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Industrial Technology Multimedia"> Industrial Technology Multimedia</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Industrial Technology Timber"> Industrial Technology Timber</label>
+      </div>
+
+      <div class="cluster-block card">
+        <h4 class="cluster-heading"><i class="dp-icon fas fa-music"></i>Visual and Performing Arts</h4>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Drama"> Drama</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Music"> Music</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Visual Arts"> Visual Arts</label>
+      </div>
+
+    </div>
+
+    <div style="margin-top: var(--space-3);">
+      <label for="satisfaction_score">Overall Satisfaction Score (1-10)</label>
+      <small>How happy are you with your HSC subject choices overall?</small>
+      <div class="slider-wrapper">
+        <input type="range" min="1" max="10" value="5" id="satisfaction_score" name="satisfaction_score" oninput="this.nextElementSibling.textContent = this.value">
+        <span class="slider-value">5</span>
+      </div>
+
+    </div>
+
+    <button type="submit" class="button" style="margin-top: var(--space-3);">
+      <i class="fas fa-database"></i> Submit Data &amp; Train Model
+    </button>
+  </form>
+
+  <script>
+    // Live counter for checked subjects
+    const checkboxes = document.querySelectorAll('input[name="target_subjects"]');
+    const counter = document.getElementById('checkbox-counter');
+
+    function updateCounter() {
+      const checked = document.querySelectorAll('input[name="target_subjects"]:checked').length;
+      counter.textContent = checked + ' subject' + (checked !== 1 ? 's' : '') + ' selected';
+      counter.style.color = checked >= 6 ? '#22c55e' : 'var(--pico-muted-color)';
+    }
+
+    checkboxes.forEach(cb => cb.addEventListener('change', updateCounter));
+
+    // Validate minimum 6 subjects on submit
+    document.querySelector('form').addEventListener('submit', function(e) {
+      const checked = document.querySelectorAll('input[name="target_subjects"]:checked').length;
+      if (checked < 6) {
+        e.preventDefault();
+        alert('Please select at least 6 subjects before submitting.');
+      }
+    });
+  </script>
+{% endblock %}
+

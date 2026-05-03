@@ -1,0 +1,10 @@
+# Git ignore file
+config.py
+__pycache__/
+*.pyc
+*.pyo
+*.pkl
+*.joblib
+static/charts/     # generated matplotlib charts
+.env
+venv/

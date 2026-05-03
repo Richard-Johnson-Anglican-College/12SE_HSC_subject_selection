@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}HSC Subject Recommendation Engine | Admin Dashboard{% endblock %}
+
+{% block content %}
+  <nav>
+    <ul><li><strong>HSC Subject Recommendation Engine</strong></li></ul>
+    <ul><li><a href="{{ url_for('index') }}">Back to App</a></li></ul>
+  </nav>
+
+  <h1>Model Maintenance &amp; White-Box Analysis</h1>
+  <p>Use this dashboard to retrain the ML pipeline when new student data is collected and visualise how the model is making decisions.</p>
+
+  <div class="card">
+    <header><i class="dp-icon fas fa-sync-alt"></i>Model Retraining</header>
+    <div class="grid">
+      <div>
+        <p>Current Model: <strong>v{{ stats.version }}</strong></p>
+        <p>Dataset: <strong>{{ stats.records }} records</strong></p>
+        {% if stats.accuracy %}
+        <p>Accuracy: <strong>{{ "%.1f"|format(stats.accuracy * 100) }}%</strong> &nbsp;|&nbsp; R²: <strong>{{ "%.4f"|format(stats.r2) }}</strong></p>
+        {% else %}
+        <p><em>Model not yet trained. Click Retrain to begin.</em></p>
+        {% endif %}
+        <form action="{{ url_for('admin_retrain') }}" method="POST" onsubmit="showLoading()">
+          <button class="button" style="background: #ef4444;" type="submit">
+            <i class="fas fa-play"></i> Retrain Model
+          </button>
+        </form>
+      </div>
+      <div>
+        <label>Live Training Logs</label>
+        <textarea readonly rows="6" id="training-log">{{ training_log if training_log else 'No training run yet. Click Retrain Model to start.' }}</textarea>
+      </div>
+    </div>
+  </div>
+
+  <h2>Machine Learning Visualisations</h2>
+
+  <div class="card">
+    <header><i class="dp-icon fas fa-network-wired"></i>1. Decision Tree Logic Gates</header>
+    {% if tree_img %}
+    <img src="{{ tree_img }}" alt="Decision Tree Diagram">
+    {% else %}
+    <p style="color: var(--pico-muted-color);"><em>Train the model to generate this visualisation.</em></p>
+    {% endif %}
+    <br><br>
+    <small>Shows the exact splits the classification model uses to bucket students into subject clusters.</small>
+  </div>
+
+  <div class="card">
+    <header><i class="dp-icon fas fa-sort-amount-down"></i>2. Feature Importance</header>
+    {% if importance_img %}
+    <img src="{{ importance_img }}" alt="Feature Importance Chart">
+    {% else %}
+    <p style="color: var(--pico-muted-color);"><em>Train the model to generate this visualisation.</em></p>
+    {% endif %}
+    <br><br>
+    <small>Shows which questionnaire inputs carry the most weight in the model's decision.</small>
+  </div>
+
+  <div class="card">
+    <header><i class="dp-icon fas fa-project-diagram"></i>3. Regression Curves</header>
+    {% if regression_img %}
+    <img src="{{ regression_img }}" alt="Regression Curve">
+    {% else %}
+    <p style="color: var(--pico-muted-color);"><em>Train the model to generate this visualisation.</em></p>
+    {% endif %}
+    <br><br>
+    <small>Visualises the non-linear relationship between interest intensity and satisfaction.</small>
+  </div>
+{% endblock %}

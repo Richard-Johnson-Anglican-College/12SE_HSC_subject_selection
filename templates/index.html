@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}HSC Subject Recommendation Engine | Home{% endblock %}
+
+{% block head %}
+<style>
+  body { padding-top: var(--space-4); padding-bottom: var(--space-4); }
+  .hero-h1 { margin-bottom: var(--space-4); }
+</style>
+{% endblock %}
+
+{% block content %}
+  <h1 class="hero-h1" style="margin-bottom: 0.5rem;">
+    <i class="dp-icon fas fa-compass"></i>HSC Subject Recommendation Engine
+    <br><small style="font-weight: 400; font-size: 1.25rem; color: var(--pico-muted-color);">— A quick guide for students</small>
+  </h1>
+  <p class="lead" style="font-size: 1.1rem; margin-bottom: 1rem;">
+    <strong>What this does:</strong> This tool looks at your interests and suggests Stage 6 subjects that might suit you. It's a helpful starting point to think about options — not the final answer.
+  </p>
+
+  <details style="margin-bottom: var(--space-4);">
+    <summary>Privacy in plain words</summary>
+    <p style="margin-top: var(--space-2); margin-bottom: 0;">Your answers are saved anonymously to make the tool better. We do not collect names, emails, or contact details.</p>
+  </details>
+
+  <div class="grid">
+    <div class="card">
+      <h2><i class="dp-icon fa-solid fa-graduation-cap"></i> I am in Year 7–10</h2>
+      <p><strong>Ready?</strong> Start the short 12‑question survey to see suggestions.</p>
+      <br>
+      <a class="button" href="{{ url_for('survey_predict') }}">
+        <i class="fa-solid fa-magnifying-glass-chart"></i>
+        Get Recommendations
+      </a>
+    </div>
+
+    <div class="card">
+      <h2><i class="dp-icon fa-solid fa-database"></i> I am in Year 11–12</h2>
+      <p>Help train our AI model by submitting your interests and the subjects you actually chose.</p>
+      <br>
+      <a class="button" href="{{ url_for('survey_train') }}" style="background: #475569;">
+        <i class="fa-solid fa-brain"></i>
+        Train the Model
+      </a>
+    </div>
+  </div>
+
+  <footer style="margin-top: var(--space-4); padding-top: var(--space-3); border-top: 1px solid var(--pico-muted-border-color); text-align: center;">
+    <small style="color: var(--pico-muted-color);">
+      <i class="fas fa-info-circle dp-icon"></i> <strong>Talk to people who can help:</strong> Show your results to your subject teachers, your school careers advisor, and your parents. They can explain prerequisites, workload, and how subjects fit your plans.
+    </small>
+  </footer>
+{% endblock %}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}HSC Subject Recommendation Engine{% endblock %}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  {# Flash messages — success/error feedback after form submissions #}
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="container" style="padding-top: 1rem;">
+        {% for category, message in messages %}
+          <div role="alert" style="
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            background: {{ '#166534' if category == 'success' else '#7f1d1d' }};
+            border: 1px solid {{ '#22c55e' if category == 'success' else '#ef4444' }};
+            color: white;">
+            {{ '✓' if category == 'success' else '⚠' }} {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <div id="loading-overlay">
+    <div class="loader"></div>
+    <div class="loading-text">AI Engine Processing...</div>
+    <div class="loading-subtext">Synthesising student patterns & Gemini analysis</div>
+  </div>
+
+  <script>
+    function showLoading() {
+      document.getElementById('loading-overlay').style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
