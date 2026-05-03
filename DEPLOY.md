@@ -251,6 +251,16 @@ Then reload. Done.
 - Clear your browser cache (Ctrl+Shift+R)
 - Check the error logs (Web tab → "Log files")
 
+#### **If git pull fails with "local changes would be overwritten"**
+This happens if you have local changes (e.g., from model training on PythonAnywhere). Stash them and pull:
+
+```bash
+git stash
+git pull
+```
+
+Then reload the web app. The stashed changes are saved if needed later.
+
 ---
 
 ### 🚀 One-Liner for Future Updates
