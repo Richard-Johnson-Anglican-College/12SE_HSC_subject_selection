@@ -6,6 +6,8 @@
 
 ## 📸 Overview
 
+**🌐 Live Demo:** [https://hscmatch.pythonanywhere.com/](https://hscmatch.pythonanywhere.com/) — Try it now!
+
 Students complete a 12-question interest survey. The system uses a trained **Random Forest classifier** to predict their strongest subject cluster, surfaces relevant subjects across multiple areas using signal-weighted ranking, and generates a **personalised AI explanation** via Google Gemini.
 
 ```
