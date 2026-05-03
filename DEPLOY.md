@@ -31,6 +31,8 @@ git clone https://github.com/Richard-Johnson-Anglican-College/12SE_HSC_subject_s
 cd 12SE_HSC_subject_selection
 ```
 
+> **📝 Note:** Git identity config is only needed if you plan to **commit** changes from PythonAnywhere. For normal deployment (pulling changes from GitHub), no git config is required.
+
 ### **Step 3: Create a Virtual Environment** ⚡ Fast Method
 
 ```bash
