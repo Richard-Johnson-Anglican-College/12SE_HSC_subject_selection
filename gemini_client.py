@@ -109,6 +109,7 @@ def generate_summary(
 
 ### WHAT THE MODEL FOUND ###
 Primary strength area: {cluster} ({match_pct}% match)
+NOTE: {match_pct}% means {match_pct} out of 100 of this student's interest answers pointed toward {cluster} subjects.
 Subject area affinities: {affinity_lines}
 
 Recommended subjects across ALL areas:
@@ -118,16 +119,20 @@ Recommended subjects across ALL areas:
 {strengths}
 
 ### YOUR TASK ###
-Write a warm, encouraging 3-4 sentence explanation directly to the student (use "you") that:
-1. References at least 2 of their specific high-scoring interests by name.
-2. Mentions subjects from MORE THAN ONE subject area (e.g. both Science and TAS if both appear above).
-3. Explains what kind of student tends to thrive across these combined areas.
+Write a warm, encouraging 4-5 sentence explanation directly to the student (use "you") that covers ALL of the following:
+
+1. WHY these specific subjects suit them — connect at least 2 of their high-scoring interests to the subjects recommended (e.g. "your love of systems thinking is exactly what Engineering Studies is built around").
+2. WHY the combination makes sense — explain how subjects from different areas complement each other (e.g. Physics gives the theory, Engineering Studies applies it, Software Engineering automates it).
+3. WHAT KIND OF STUDENT thrives here — paint a picture of the learner type, not just the subjects (e.g. "students who like to understand why something works, not just that it works").
+4. A FORWARD-LOOKING sentence — one concrete example of where this combination could lead (a career, a uni degree, or a project type) without being prescriptive.
+5. In one sentence, mention that {match_pct}% of their answers pointed toward {cluster} — phrase it like "around X in every 10 answers" so the number feels human, not like a test score. Make clear it reflects interest alignment, not ability.
 
 Rules:
 - Plain Australian English, no jargon.
 - Do NOT say "algorithm" or "machine learning".
 - Do NOT invent subjects not listed above.
-- Maximum 80 words."""
+- Use "you" and "your" throughout — speak directly to the student.
+- Maximum 120 words."""
 
     try:
         model = genai.GenerativeModel("gemma-3n-e4b-it")
