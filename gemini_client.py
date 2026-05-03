@@ -41,6 +41,7 @@ def generate_summary(
     match_pct: int,
     subjects: list[dict],
     answers: dict,
+    cluster_scores: list[dict] | None = None,
 ) -> str:
     """
     Call Gemini to generate a 2-3 sentence, student-friendly explanation
@@ -48,49 +49,88 @@ def generate_summary(
 
     Parameters
     ----------
-    cluster    : e.g. "Maths"
-    match_pct  : e.g. 82
-    subjects   : list of {name, description} dicts
-    answers    : raw survey answers {q1..q12}
+    cluster        : e.g. "Science"
+    match_pct      : e.g. 82
+    subjects       : full list of recommended subjects across ALL clusters
+    answers        : raw survey answers {q1..q12}
+    cluster_scores : list of {cluster, pct} dicts for all shown clusters
     """
     if not _configure():
         return _fallback(cluster, match_pct, subjects)
 
-    subject_names = ", ".join(s["name"] for s in subjects[:4])
-    
-    # Map question numbers to descriptive labels for the prompt
-    q_labels = {
-        "q1":  f"logic puzzle interest {answers.get('q1', 5)}/10",
-        "q2":  f"love of writing/literature {answers.get('q2', 3)}/5",
-        "q3":  f"enjoys hands-on making {'yes' if str(answers.get('q3', 0)) == '1' else 'no'}",
-        "q4":  f"performance/spotlight comfort {answers.get('q4', 5)}/10",
-        "q5":  f"interest in biology/body {answers.get('q5', 3)}/5",
-        "q6":  f"interested in business {'yes' if str(answers.get('q6', 0)) == '1' else 'no'}",
-        "q7":  f"coding/tech interest {answers.get('q7', 5)}/10",
-        "q8":  f"visual arts preference {answers.get('q8', 3)}/5",
-        "q9":  f"interest in history/social issues {answers.get('q9', 5)}/10",
-        "q10": f"enjoys science experiments {'yes' if str(answers.get('q10', 0)) == '1' else 'no'}",
-        "q11": f"culinary/hospitality interest {answers.get('q11', 3)}/5",
-        "q12": f"systems thinking {answers.get('q12', 5)}/10",
-    }
-    profile_summary = "; ".join(q_labels.values())
+    # Group all recommended subjects by cluster for the prompt
+    clusters_seen = []
+    subjects_by_cluster: dict[str, list[str]] = {}
+    for s in subjects:
+        c = s.get("cluster", "")
+        if c not in subjects_by_cluster:
+            subjects_by_cluster[c] = []
+            clusters_seen.append(c)
+        subjects_by_cluster[c].append(s["name"])
+
+    subject_block = "\n".join(
+        f"  • {c}: {', '.join(names)}"
+        for c, names in subjects_by_cluster.items()
+        if c != "English"
+    )
+
+    # Build a readable affinity summary
+    affinity_lines = ""
+    if cluster_scores:
+        affinity_lines = ", ".join(
+            f"{cs['cluster']} {cs['pct']}%"
+            for cs in cluster_scores
+            if cs.get("pct", 0) > 0
+        )
+
+    # Only highlight Q values that are notably high (top third of their scale)
+    highlights = []
+    q_map = [
+        ("q1",  int(answers.get("q1",  5)), 10, "logic and maths"),
+        ("q2",  int(answers.get("q2",  3)),  5, "writing and literature"),
+        ("q3",  int(answers.get("q3",  0)),  1, "hands-on building and making"),
+        ("q4",  int(answers.get("q4",  5)), 10, "performance and creative expression"),
+        ("q5",  int(answers.get("q5",  3)),  5, "biology and the human body"),
+        ("q7",  int(answers.get("q7",  5)), 10, "coding and technology"),
+        ("q8",  int(answers.get("q8",  3)),  5, "visual arts and design"),
+        ("q9",  int(answers.get("q9",  5)), 10, "society, history, and law"),
+        ("q10", int(answers.get("q10", 0)),  1, "science experiments and lab work"),
+        ("q12", int(answers.get("q12", 5)), 10, "systems thinking and engineering"),
+    ]
+    for key, val, scale, label in q_map:
+        if scale == 1 and val == 1:
+            highlights.append(label)
+        elif scale > 1 and val / scale >= 0.7:
+            highlights.append(f"{label} ({val}/{scale})")
+
+    strengths = "; ".join(highlights) if highlights else "a broad range of interests"
 
     prompt = f"""You are a friendly HSC subject advisor writing to an Australian Year 10 student.
 
-A machine learning model has recommended the '{cluster}' subject cluster for this student (match score: {match_pct}%).
-The top subjects in this cluster include: {subject_names}.
+### WHAT THE MODEL FOUND ###
+Primary strength area: {cluster} ({match_pct}% match)
+Subject area affinities: {affinity_lines}
 
-The student's interest profile: {profile_summary}.
+Recommended subjects across ALL areas:
+{subject_block}
 
-Write a warm, encouraging 2-3 sentence explanation (in plain Australian English, no jargon) of:
-1. Why their specific interests suggest this cluster suits them.
-2. What kind of person tends to thrive in this area.
+### STUDENT'S KEY INTERESTS ###
+{strengths}
 
-Do NOT use the word "algorithm" or "machine learning". Write directly to the student (use "you").
-Keep it under 60 words."""
+### YOUR TASK ###
+Write a warm, encouraging 3-4 sentence explanation directly to the student (use "you") that:
+1. References at least 2 of their specific high-scoring interests by name.
+2. Mentions subjects from MORE THAN ONE subject area (e.g. both Science and TAS if both appear above).
+3. Explains what kind of student tends to thrive across these combined areas.
+
+Rules:
+- Plain Australian English, no jargon.
+- Do NOT say "algorithm" or "machine learning".
+- Do NOT invent subjects not listed above.
+- Maximum 80 words."""
 
     try:
-        model = genai.GenerativeModel("gemini-flash-latest")
+        model = genai.GenerativeModel("gemma-3n-e4b-it")
         response = model.generate_content(prompt)
         text = response.text.strip()
         # Safety: ensure we got something reasonable back

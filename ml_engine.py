@@ -5,7 +5,7 @@ Phase 3: Machine Learning Engine
 
 Pipeline:
   1. MinMaxScaler    — normalise q1-q12 to [0, 1]
-  2. DecisionTreeClassifier — predict Subject Cluster (label)
+  2. RandomForestClassifier — predict Subject Cluster (label)
   3. PolynomialFeatures (degree=2) + LinearRegression — predict satisfaction
   4. Serialise all artefacts to models/
 
@@ -31,7 +31,7 @@ import matplotlib.pyplot as plt
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier, plot_tree
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import Ridge
 from sklearn.preprocessing import MinMaxScaler, PolynomialFeatures
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, r2_score
@@ -55,6 +55,30 @@ os.makedirs(MODEL_DIR, exist_ok=True)
 os.makedirs(CHART_DIR, exist_ok=True)
 
 FEATURE_NAMES = [f"q{i}" for i in range(1, 13)]
+
+# ---------------------------------------------------------------------------
+# In-memory model cache — avoids 4 disk reads on every prediction request
+# ---------------------------------------------------------------------------
+_CACHE: dict = {}
+
+
+def _get_models() -> dict:
+    """Return cached models, loading from disk only on first call after (re)train."""
+    global _CACHE
+    if not _CACHE:
+        _CACHE = {
+            'scaler': _load(SCALER_PATH),
+            'clf':    _load(CLASSIFIER_PATH),
+            'poly':   _load(POLY_PATH),
+            'reg':    _load(REGRESSOR_PATH),
+        }
+    return _CACHE
+
+
+def _clear_cache() -> None:
+    """Invalidate cache after retraining so next predict() reloads fresh models."""
+    global _CACHE
+    _CACHE = {}
 
 
 # ---------------------------------------------------------------------------
@@ -97,7 +121,7 @@ def train() -> dict:
 
     poly = PolynomialFeatures(degree=2, include_bias=False)
     X_poly = poly.fit_transform(X_reg_scaled)
-    reg = LinearRegression()
+    reg = Ridge(alpha=10)   # Regularised — prevents wild extrapolation on sparse polynomial features
     reg.fit(X_poly, y_reg)
     y_pred_reg = reg.predict(X_poly)
     r2 = r2_score(y_reg, y_pred_reg)
@@ -107,6 +131,9 @@ def train() -> dict:
     _save(clf,        CLASSIFIER_PATH)
     _save(poly,       POLY_PATH)
     _save(reg,        REGRESSOR_PATH)
+    _clear_cache()
+
+    version = _next_version()
 
     # Training log string (returned to admin page)
     log = (
@@ -116,11 +143,11 @@ def train() -> dict:
         f"Training Polynomial Regressor (degree=2)...  R²: {r2:.4f}\n"
         f"Saving models to models/  ✓\n"
         f"Generating visualisation charts...  ✓\n"
-        f"Complete. Model v{_next_version()} saved."
+        f"Complete. Model v{version} saved."
     )
     
     info = {
-        "version":      _next_version(),
+        "version":      version,
         "trained_at":   datetime.datetime.now().isoformat(timespec="seconds"),
         "record_count": int(len(X)),
         "accuracy":     round(float(accuracy), 4),
@@ -162,10 +189,11 @@ def predict(answers: dict) -> dict:
     if not is_trained():
         raise RuntimeError("Models are not trained yet. Visit /admin to train.")
 
-    scaler     = _load(SCALER_PATH)
-    clf        = _load(CLASSIFIER_PATH)
-    poly       = _load(POLY_PATH)
-    reg        = _load(REGRESSOR_PATH)
+    models = _get_models()
+    scaler = models['scaler']
+    clf    = models['clf']
+    poly   = models['poly']
+    reg    = models['reg']
 
     # Build feature vector (named DataFrame to avoid sklearn warning)
     X_raw = pd.DataFrame(
@@ -184,22 +212,90 @@ def predict(answers: dict) -> dict:
     X_poly = poly.transform(X_scaled)
     sat_raw = reg.predict(X_poly)[0]
     # Clamp to 1-10, then blend with classifier confidence to get match %
-    sat_clamped = float(np.clip(sat_raw, 1, 10))
-    match_pct = int(round((sat_clamped / 10) * 60 + confidence * 40))
+    # Satisfaction (80%) is the primary signal; training data clusters at 7-10 so
+    # it reliably drives the score. Confidence (20%) acts as a secondary modifier.
+    sat_clamped = float(np.clip(sat_raw, 5, 10))  # Floor at 5 — regression can extrapolate below training range (7-10)
+    match_pct = int(round((sat_clamped / 10) * 80 + confidence * 20))
     match_pct = max(5, min(99, match_pct))   # Sensible display range
 
-    # Subjects in predicted cluster
-    subjects_in_cluster = _subjects_for_cluster(cluster)
+    # Build cross-cluster subject recommendations
+    # Always show top 3 clusters; also include any beyond top 3 that score > 10%
+    proba_pairs  = sorted(zip(clf.classes_, proba), key=lambda x: x[1], reverse=True)
+    SECONDARY_THRESHOLD = 0.10
+    MIN_CLUSTERS = 3
+
+    selected_clusters = [
+        (c, p) for i, (c, p) in enumerate(proba_pairs)
+        if i < MIN_CLUSTERS or p >= SECONDARY_THRESHOLD
+    ]
+
+    cluster_scores = [
+        {"cluster": c, "pct": int(round(p * 100))}
+        for c, p in selected_clusters
+    ]
+
+    MIN_RELEVANCE = 0.55   # subjects scoring below this are not shown even if a slot is free
+    subjects = []
+    for i, (c, p) in enumerate(selected_clusters):
+        limit = 4 if c == cluster else (2 if i == 1 else 1)
+        candidates = [s for s in _subjects_for_cluster(c, answers)
+                      if _subject_relevance(s["name"], answers) >= MIN_RELEVANCE]
+        for s in candidates[:limit]:
+            subjects.append({
+                "name":        s["name"],
+                "description": s["description"],
+                "cluster":     c,
+                "is_primary":  c == cluster,
+                "is_compulsory": False,
+            })
+
+    # Maths gate — if Q1 >= 7 and no Maths cluster shown, inject top Maths subject
+    q1 = float(answers.get("q1", 5))
+    if q1 >= 7 and not any(s["cluster"] == "Maths" for s in subjects):
+        maths_candidates = [s for s in _subjects_for_cluster("Maths", answers)
+                            if _subject_relevance(s["name"], answers) >= MIN_RELEVANCE]
+        if maths_candidates:
+            top_maths = maths_candidates[0]
+            subjects.append({
+                "name":          top_maths["name"],
+                "description":   top_maths["description"],
+                "cluster":       "Maths",
+                "is_primary":    False,
+                "is_compulsory": False,
+            })
+            cluster_scores.append({"cluster": "Maths", "pct": 0})
+
+    # English is compulsory — always include it if not already recommended
+    if not any(s["cluster"] == "English" for s in subjects):
+        q2 = float(answers.get("q2", 3))
+        english_all = _subjects_for_cluster("English", answers)
+        english_map = {s["name"]: s for s in english_all}
+        if q2 >= 4:
+            suggested = [english_map.get("English Advanced"), english_map.get("English Extension")]
+        elif q2 >= 2:
+            suggested = [english_map.get("English Advanced")]
+        else:
+            suggested = [english_map.get("English Standard")]
+        for s in suggested:
+            if s:
+                subjects.append({
+                    "name":          s["name"],
+                    "description":   s["description"],
+                    "cluster":       "English",
+                    "is_primary":    False,
+                    "is_compulsory": True,
+                })
+        cluster_scores.append({"cluster": "English", "pct": 0, "compulsory": True})
 
     # Generate per-student profile chart (base64)
     chart_b64 = _generate_student_chart(answers)
 
     return {
-        "cluster":   cluster,
-        "match_pct": match_pct,
-        "subjects":  subjects_in_cluster,
-        "confidence": round(confidence * 100, 1),
-        "chart_b64": chart_b64,
+        "cluster":       cluster,
+        "match_pct":     match_pct,
+        "subjects":      subjects,
+        "cluster_scores": cluster_scores,
+        "chart_b64":     chart_b64,
     }
 
 
@@ -405,10 +501,61 @@ def _next_version() -> str:
         return "1.0"
 
 
-def _subjects_for_cluster(cluster: str) -> list[dict]:
-    """Return all subjects in a cluster as a list of {name, description} dicts."""
+# Primary question signals for each subject.
+# Each entry: list of (question_key, weight) tuples.
+# Questions are normalised to [0,1] before scoring: /10 for 1-10, /5 for 1-5, as-is for binary.
+_SUBJECT_SIGNALS: dict[str, list[tuple[str, float]]] = {
+    "Drama":                          [("q4", 1.0)],
+    "Music":                          [("q4", 0.7), ("q8", 0.3)],
+    "Visual Arts":                    [("q8", 1.0)],
+    "Software Engineering":           [("q7", 0.7), ("q1", 0.25), ("q12", 0.15)],
+    "Engineering Studies":            [("q12", 0.7), ("q3", 0.25)],
+    "Design and Technology":          [("q3", 0.5), ("q8", 0.5)],
+    "Industrial Technology Multimedia": [("q7", 0.6), ("q3", 0.4)],
+    "Industrial Technology Timber":   [("q3", 0.6), ("q11", 0.4)],
+    "Food Technology":                [("q11", 1.0)],
+    "Hospitality":                    [("q11", 0.7), ("q6", 0.3)],
+    "Biology":                        [("q5", 0.8), ("q10", 0.2)],
+    "Chemistry":                      [("q1", 0.45), ("q10", 0.4), ("q5", 0.15)],
+    "Physics":                        [("q1", 0.6), ("q12", 0.25), ("q10", 0.15)],
+    "Mathematics Advanced":           [("q1", 0.7), ("q12", 0.3)],
+    "Mathematics Extension 1":        [("q1", 0.8), ("q12", 0.2)],
+    "Mathematics Extension 2":        [("q1", 1.0)],
+    "Mathematics Standard":           [("q1", 0.5)],
+    "English Advanced":               [("q2", 0.8), ("q9", 0.2)],
+    "English Extension":              [("q2", 1.0)],
+    "English Standard":               [("q2", 0.4)],
+    "Health and Movement Science":    [("q5", 0.5), ("q4", 0.5)],
+    "Legal Studies":                  [("q9", 1.0)],
+    "Economics":                      [("q6", 0.6), ("q9", 0.4)],
+    "Business Studies":               [("q6", 0.8), ("q9", 0.2)],
+    "Geography":                      [("q9", 0.8), ("q10", 0.2)],
+    "Ancient History":                [("q9", 1.0)],
+    "Society and Culture":            [("q9", 0.7), ("q4", 0.3)],
+    "Community and Family Studies":   [("q5", 0.6), ("q9", 0.4)],
+    "Commerce":                       [("q6", 0.6), ("q9", 0.4)],
+    "Biblical Studies":               [("q9", 1.0)],
+    "School of Languages":            [("q2", 0.6), ("q9", 0.4)],
+}
+
+_Q_MAX = {"q1":10,"q2":5,"q3":1,"q4":10,"q5":5,"q6":1,"q7":10,"q8":5,"q9":10,"q10":1,"q11":5,"q12":10}
+
+
+def _subject_relevance(name: str, answers: dict) -> float:
+    """Score a subject 0-1 based on how well the student's answers match its signals."""
+    signals = _SUBJECT_SIGNALS.get(name, [])
+    if not signals:
+        return 0.0
+    return sum((float(answers.get(q, 0)) / _Q_MAX.get(q, 10)) * w for q, w in signals)
+
+
+def _subjects_for_cluster(cluster: str, answers: dict | None = None) -> list[dict]:
+    """Return subjects in a cluster sorted by relevance to the student's answers."""
     subjects = [s for s, c in dh.SUBJECT_CLUSTER_MAP.items() if c == cluster]
-    subjects.sort()
+    if answers:
+        subjects.sort(key=lambda s: _subject_relevance(s, answers), reverse=True)
+    else:
+        subjects.sort()
     # Brief descriptions for the results page modal
     descriptions = {
         "English Advanced":               "An in-depth study of complex texts, critical thinking, and sophisticated written expression. Suits students who love analysing language and ideas.",
@@ -431,6 +578,7 @@ def _subjects_for_cluster(cluster: str) -> list[dict]:
         "Software Engineering":           "Design and build software systems using industry-standard practices. Strongly recommended for students interested in technology careers.",
         "Health and Movement Science":    "Study human movement, health, and physical activity. A great foundation for sport science, physiotherapy, or teaching.",
         "Biology":                        "Explore living systems — from cells and genetics to ecosystems. Ideal for students considering medicine, science, or environment.",
+        "Chemistry":                      "Study matter, reactions, and molecular structures through rigorous quantitative analysis and lab work. Essential for medicine, pharmacy, and engineering pathways.",
         "Physics":                        "Understand the fundamental laws of the universe through motion, waves, and electricity. Core for engineering and physical science pathways.",
         "Design and Technology":          "Design and create products that solve real problems. Develops creative thinking, prototyping, and project management skills.",
         "Engineering Studies":            "Apply physics and maths to engineering challenges. Ideal preparation for engineering degrees.",

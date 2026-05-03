@@ -3,14 +3,40 @@ HSC Subject Recommendation Engine
 app.py - Flask application entry point and route handler
 """
 
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import Flask, render_template, request, redirect, url_for, session, flash, Response, jsonify
+from functools import wraps
 import os
 import data_handler as dh
 import ml_engine as ml
 import gemini_client as gemini
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)  # Required for session usage
+
+try:
+    from config import SECRET_KEY
+    app.secret_key = SECRET_KEY
+except (ImportError, AttributeError):
+    app.secret_key = os.urandom(24)
+    print("WARNING: SECRET_KEY not set in config.py — sessions will not persist across restarts.")
+
+
+def _require_admin(f):
+    """HTTP Basic Auth decorator for admin routes."""
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        try:
+            from config import ADMIN_PASSWORD
+        except (ImportError, AttributeError):
+            ADMIN_PASSWORD = "admin"
+        auth = request.authorization
+        if not auth or auth.password != ADMIN_PASSWORD:
+            return Response(
+                'Admin access required.',
+                401,
+                {'WWW-Authenticate': 'Basic realm="Admin Dashboard"'}
+            )
+        return f(*args, **kwargs)
+    return decorated
 
 # ---------------------------------------------------------------------------
 # Routes
@@ -30,7 +56,7 @@ def survey_predict():
         answers = {f'q{i}': request.form.get(f'q{i}', 0) for i in range(1, 13)}
         session['survey_answers'] = answers
         return redirect(url_for('results'))
-    return render_template('survey_predict.html')
+    return render_template('survey_predict.html', answers=session.get('survey_answers', {}))
 
 
 @app.route('/survey/train', methods=['GET', 'POST'])
@@ -64,24 +90,36 @@ def results():
 
     prediction = ml.predict(answers)
 
-    gemini_summary = gemini.generate_summary(
-        cluster=prediction['cluster'],
-        match_pct=prediction['match_pct'],
-        subjects=prediction['subjects'],
-        answers=answers,
-    )
-
     return render_template(
         'results.html',
         cluster=prediction['cluster'],
         match_pct=prediction['match_pct'],
         subjects=prediction['subjects'],
-        gemini_summary=gemini_summary,
+        cluster_scores=prediction.get('cluster_scores', []),
         chart_url=prediction.get('chart_b64'),
     )
 
 
+@app.route('/results/summary', methods=['POST'])
+def results_summary():
+    """Async endpoint — returns Gemini summary as JSON when the student requests it."""
+    answers = session.get('survey_answers')
+    if not answers or not ml.is_trained():
+        return jsonify({'summary': None}), 400
+
+    prediction = ml.predict(answers)
+    summary = gemini.generate_summary(
+        cluster=prediction['cluster'],
+        match_pct=prediction['match_pct'],
+        subjects=prediction['subjects'],
+        answers=answers,
+        cluster_scores=prediction.get('cluster_scores'),
+    )
+    return jsonify({'summary': summary})
+
+
 @app.route('/admin')
+@_require_admin
 def admin():
     """Teacher/admin dashboard for model retraining and visualisations."""
     info = ml.get_model_info()
@@ -101,6 +139,7 @@ def admin():
 
 
 @app.route('/admin/retrain', methods=['POST'])
+@_require_admin
 def admin_retrain():
     """Trigger ML pipeline retraining."""
     try:

@@ -4,7 +4,10 @@
 {% block content %}
   <nav>
     <ul><li><strong>HSC Subject Recommendation Engine</strong></li></ul>
-    <ul><li><a href="{{ url_for('index') }}">Start Over</a></li></ul>
+    <ul>
+      <li><a href="{{ url_for('survey_predict') }}">Adjust My Answers</a></li>
+      <li><a href="{{ url_for('index') }}">Start Over</a></li>
+    </ul>
   </nav>
 
   <header>
@@ -14,21 +17,25 @@
 
   <div class="grid">
     <div class="card">
-      <header><i class="dp-icon fas fa-star"></i>Recommended Cluster</header>
+      <header><i class="dp-icon fas fa-star"></i>Primary Strength Area</header>
       <h2>{{ cluster }}</h2>
+      {% if cluster == 'English' %}
+      <small><em><i class="fas fa-info-circle"></i> Choose one English course — Standard or Advanced. Extension is available on top of Advanced only.</em></small>
+      {% elif cluster == 'Maths' %}
+      <small><em><i class="fas fa-info-circle"></i> Choose one Maths course — Standard, Advanced, or Extension (which builds on Advanced).</em></small>
+      {% endif %}
+      {% if cluster_scores %}
       <hr>
-      <h4>Ranked Subjects in Cluster:</h4>
-      <ol>
-        {% for subject in subjects %}
-        <li>
-          <a href="#" onclick="event.preventDefault(); document.getElementById('modal-{{ loop.index }}').showModal();">
-            {{ subject.name }}
-          </a>
-        </li>
-        {% else %}
-        <li>Subjects will appear here after ML integration.</li>
-        {% endfor %}
-      </ol>
+      <h5 style="margin-bottom:0.5rem;">Subject Area Affinities</h5>
+      {% for score in cluster_scores %}
+      {% if score.pct > 0 %}
+      <div style="margin-bottom:0.4rem;">
+        <small><strong>{{ score.cluster }}</strong> &nbsp;{{ score.pct }}%</small>
+        <progress value="{{ score.pct }}" max="100" style="margin-top:0.1rem;height:0.4rem;"></progress>
+      </div>
+      {% endif %}
+      {% endfor %}
+      {% endif %}
     </div>
 
     <div class="card">
@@ -36,18 +43,76 @@
       <h2>{{ match_pct }}%</h2>
       <progress value="{{ match_pct }}" max="100"></progress>
       <small>
-        <strong>What this means:</strong> {{ match_pct }}% of older students with interests very similar to yours reported being highly satisfied after choosing these subjects. This indicates a strong chance you will enjoy this pathway too!
+        <strong>
+          {% if match_pct >= 80 %}Excellent match
+          {% elif match_pct >= 65 %}Strong match
+          {% elif match_pct >= 50 %}Good match
+          {% else %}Moderate match{% endif %}
+        </strong> &mdash;
+        A score of {{ match_pct }}% reflects how closely your interest profile aligns with students in the {{ cluster }} cluster, blending satisfaction patterns and profile similarity.
       </small>
     </div>
   </div>
 
   <div class="card">
-    <header><i class="dp-icon fas fa-magic"></i>Why this fits you (AI Analysis)</header>
-    <blockquote>
-      <p>{{ gemini_summary }}</p>
-      <footer>— Synthesised by Gemini AI</footer>
-    </blockquote>
+    <header><i class="dp-icon fas fa-list-ul"></i>Recommended Subjects</header>
+    <p><small>Based on your full interest profile across all subject areas. Primary area shown first, then secondary matches.</small></p>
+    {% set ns = namespace(current_cluster='') %}
+    {% for subject in subjects %}
+      {% if subject.cluster != ns.current_cluster %}
+        {% set ns.current_cluster = subject.cluster %}
+        {% if not loop.first %}</ul>{% endif %}
+        <h5 style="margin-top:1rem;margin-bottom:0.4rem;">
+          {% if subject.is_primary %}<i class="fas fa-star" style="color:var(--pico-primary);"></i>{% elif subject.is_compulsory %}<i class="fas fa-lock" style="font-size:0.8rem;color:var(--pico-muted-color);"></i>{% else %}<i class="fas fa-circle" style="font-size:0.6rem;vertical-align:middle;color:var(--pico-muted-color);"></i>{% endif %}
+          {{ subject.cluster }}{% if subject.is_compulsory %} <small style="color:var(--pico-muted-color);">(Compulsory)</small>{% endif %}
+        </h5>
+        <ul style="margin-bottom:0;">
+      {% endif %}
+      <li>
+        <a href="#" onclick="event.preventDefault(); document.getElementById('modal-{{ loop.index }}').showModal();">
+          {{ subject.name }}
+        </a>
+      </li>
+    {% else %}
+      <p>No subjects to display.</p>
+    {% endfor %}
+    {% if subjects %}</ul>{% endif %}
   </div>
+
+  <div class="card">
+    <header><i class="dp-icon fas fa-magic"></i>Why this fits you (AI Analysis)</header>
+    <div id="ai-summary-container">
+      <p style="color: var(--pico-muted-color);"><em>Click below to generate a personalised AI explanation of your results.</em></p>
+    </div>
+    <button id="ai-btn" class="button" onclick="generateSummary()" style="margin-top: 0.75rem;">
+      <i class="fas fa-magic"></i> Generate AI Analysis
+    </button>
+  </div>
+
+  <script>
+    async function generateSummary() {
+      const btn = document.getElementById('ai-btn');
+      const container = document.getElementById('ai-summary-container');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
+      try {
+        const response = await fetch('/results/summary', { method: 'POST' });
+        const data = await response.json();
+        if (data.summary) {
+          container.innerHTML = '<blockquote><p>' + data.summary + '</p><footer>\u2014 Synthesised by Gemini AI</footer></blockquote>';
+          btn.style.display = 'none';
+        } else {
+          container.innerHTML = '<p style="color:#ef4444;">Could not generate summary. Please try again.</p>';
+          btn.disabled = false;
+          btn.innerHTML = '<i class="fas fa-magic"></i> Retry';
+        }
+      } catch (e) {
+        container.innerHTML = '<p style="color:#ef4444;">Network error. Please try again.</p>';
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-magic"></i> Retry';
+      }
+    }
+  </script>
 
   {% if chart_url %}
   <div class="card">

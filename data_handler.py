@@ -42,16 +42,17 @@ SUBJECT_CLUSTER_MAP: dict[str, str] = {
     "Mathematics Extension 1":  "Maths",
     "Mathematics Extension 2":  "Maths",
     "Mathematics Standard":     "Maths",
-    "Software Engineering":     "Maths",
 
     # PDHPE
     "Health and Movement Science": "PDHPE",
 
     # Science
     "Biology":                  "Science",
+    "Chemistry":                "Science",
     "Physics":                  "Science",
 
     # TAS
+    "Software Engineering":     "TAS",
     "Design and Technology":    "TAS",
     "Engineering Studies":      "TAS",
     "Food Technology":          "TAS",
@@ -98,16 +99,32 @@ def subjects_to_clusters(subjects: list[str]) -> list[str]:
     return [SUBJECT_CLUSTER_MAP[s] for s in subjects if s in SUBJECT_CLUSTER_MAP]
 
 
+# When cluster counts tie, more distinctive/technical clusters take priority
+# over background subjects (English, Maths) that almost every student takes.
+_CLUSTER_PRIORITY: dict[str, int] = {
+    "TAS":                      7,
+    "Science":                  6,
+    "PDHPE":                    5,
+    "Visual and Performing Arts": 4,
+    "HSIE":                     3,
+    "Maths":                    2,
+    "English":                  1,
+}
+
+
 def majority_cluster(subjects: list[str]) -> str | None:
     """
     Determine the dominant cluster from a student's subject list.
-    Uses a simple frequency count — ties are broken alphabetically.
+    Uses frequency count; ties broken by _CLUSTER_PRIORITY so that
+    technical/specialist clusters (TAS, Science) beat background ones.
     Returns None if no subjects can be mapped.
     """
     clusters = subjects_to_clusters(subjects)
     if not clusters:
         return None
-    return max(set(clusters), key=clusters.count)
+    max_count = max(clusters.count(c) for c in set(clusters))
+    candidates = [c for c in set(clusters) if clusters.count(c) == max_count]
+    return max(candidates, key=lambda c: _CLUSTER_PRIORITY.get(c, 0))
 
 
 # ---------------------------------------------------------------------------

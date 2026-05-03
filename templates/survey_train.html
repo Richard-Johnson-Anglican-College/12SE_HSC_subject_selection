@@ -27,16 +27,12 @@
     </div>
 
     <div class="question card">
-      <label><i class="dp-icon fas fa-book-open"></i>2. Narrative Thread (1-5)</label>
+      <label for="q2"><i class="dp-icon fas fa-book-open"></i>2. Narrative Thread (1-5)</label>
       <small>How much do you enjoy writing stories or analysing literature?</small>
-      <select id="q2" name="q2" required>
-        <option value="" selected disabled>Select an option...</option>
-        <option value="1">1 - Not at all</option>
-        <option value="2">2 - A little</option>
-        <option value="3">3 - Neutral</option>
-        <option value="4">4 - Quite a bit</option>
-        <option value="5">5 - Love it</option>
-      </select>
+      <div class="slider-wrapper">
+        <input type="range" min="1" max="5" value="3" id="q2" name="q2" oninput="this.nextElementSibling.textContent = this.value">
+        <span class="slider-value">3</span>
+      </div>
     </div>
 
     <div class="question card">
@@ -59,15 +55,12 @@
     </div>
 
     <div class="question card">
-      <fieldset>
-        <legend><i class="dp-icon fas fa-dna"></i>5. Human Machine (1-5)</legend>
-        <small>How fascinated are you by biology, anatomy, and how the body works?</small>
-        <label><input type="radio" name="q5" value="1" required> 1</label>
-        <label><input type="radio" name="q5" value="2"> 2</label>
-        <label><input type="radio" name="q5" value="3"> 3</label>
-        <label><input type="radio" name="q5" value="4"> 4</label>
-        <label><input type="radio" name="q5" value="5"> 5</label>
-      </fieldset>
+      <label for="q5"><i class="dp-icon fas fa-dna"></i>5. Human Machine (1-5)</label>
+      <small>How fascinated are you by biology, anatomy, and how the body works?</small>
+      <div class="slider-wrapper">
+        <input type="range" min="1" max="5" value="3" id="q5" name="q5" oninput="this.nextElementSibling.textContent = this.value">
+        <span class="slider-value">3</span>
+      </div>
     </div>
 
     <div class="question card">
@@ -90,15 +83,12 @@
     </div>
 
     <div class="question card">
-      <fieldset>
-        <legend><i class="dp-icon fas fa-palette"></i>8. Visual Eye (1-5)</legend>
-        <small>How much do you prefer visual design, drawing, and arts?</small>
-        <label><input type="radio" name="q8" value="1" required> 1</label>
-        <label><input type="radio" name="q8" value="2"> 2</label>
-        <label><input type="radio" name="q8" value="3"> 3</label>
-        <label><input type="radio" name="q8" value="4"> 4</label>
-        <label><input type="radio" name="q8" value="5"> 5</label>
-      </fieldset>
+      <label for="q8"><i class="dp-icon fas fa-palette"></i>8. Visual Eye (1-5)</label>
+      <small>How much do you prefer visual design, drawing, and arts?</small>
+      <div class="slider-wrapper">
+        <input type="range" min="1" max="5" value="3" id="q8" name="q8" oninput="this.nextElementSibling.textContent = this.value">
+        <span class="slider-value">3</span>
+      </div>
     </div>
 
     <div class="question card">
@@ -121,15 +111,12 @@
     </div>
 
     <div class="question card">
-      <fieldset>
-        <legend><i class="dp-icon fas fa-utensils"></i>11. Culinary Interest (1-5)</legend>
-        <small>How interested are you in food technology and hospitality?</small>
-        <label><input type="radio" name="q11" value="1" required> 1</label>
-        <label><input type="radio" name="q11" value="2"> 2</label>
-        <label><input type="radio" name="q11" value="3"> 3</label>
-        <label><input type="radio" name="q11" value="4"> 4</label>
-        <label><input type="radio" name="q11" value="5"> 5</label>
-      </fieldset>
+      <label for="q11"><i class="dp-icon fas fa-utensils"></i>11. Culinary Interest (1-5)</label>
+      <small>How interested are you in food technology and hospitality?</small>
+      <div class="slider-wrapper">
+        <input type="range" min="1" max="5" value="3" id="q11" name="q11" oninput="this.nextElementSibling.textContent = this.value">
+        <span class="slider-value">3</span>
+      </div>
     </div>
 
     <div class="question card">
@@ -187,6 +174,7 @@
       <div class="cluster-block card">
         <h4 class="cluster-heading"><i class="dp-icon fas fa-flask"></i>Science</h4>
         <label class="subject-check"><input type="checkbox" name="target_subjects" value="Biology"> Biology</label>
+        <label class="subject-check"><input type="checkbox" name="target_subjects" value="Chemistry"> Chemistry</label>
         <label class="subject-check"><input type="checkbox" name="target_subjects" value="Physics"> Physics</label>
       </div>
 
