@@ -104,12 +104,13 @@ def generate_summary(
             highlights.append(f"{label} ({val}/{scale})")
 
     strengths = "; ".join(highlights) if highlights else "a broad range of interests"
+    match_in_10 = round(match_pct / 10)
 
     prompt = f"""You are a friendly HSC subject advisor writing to an Australian Year 10 student.
 
 ### WHAT THE MODEL FOUND ###
 Primary strength area: {cluster} ({match_pct}% match)
-NOTE: {match_pct}% means {match_pct} out of 100 of this student's interest answers pointed toward {cluster} subjects.
+NOTE: {match_pct}% means roughly {match_in_10} in every 10 of this student's interest answers pointed toward {cluster} subjects.
 Subject area affinities: {affinity_lines}
 
 Recommended subjects across ALL areas:
@@ -125,7 +126,7 @@ Write a warm, encouraging 4-5 sentence explanation directly to the student (use 
 2. WHY the combination makes sense — explain how subjects from different areas complement each other (e.g. Physics gives the theory, Engineering Studies applies it, Software Engineering automates it).
 3. WHAT KIND OF STUDENT thrives here — paint a picture of the learner type, not just the subjects (e.g. "students who like to understand why something works, not just that it works").
 4. A FORWARD-LOOKING sentence — one concrete example of where this combination could lead (a career, a uni degree, or a project type) without being prescriptive.
-5. In one sentence, mention that {match_pct}% of their answers pointed toward {cluster} — phrase it like "around X in every 10 answers" so the number feels human, not like a test score. Make clear it reflects interest alignment, not ability.
+5. In one sentence, mention that around {match_in_10} in every 10 of their answers pointed toward {cluster} — use exactly that phrasing. Make clear it reflects interest alignment, not ability.
 
 Rules:
 - Plain Australian English, no jargon.
