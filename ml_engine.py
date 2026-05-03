@@ -237,7 +237,7 @@ def predict(answers: dict) -> dict:
     MIN_RELEVANCE = 0.55   # subjects scoring below this are not shown even if a slot is free
     subjects = []
     for i, (c, p) in enumerate(selected_clusters):
-        limit = 4 if c == cluster else (2 if i == 1 else 1)
+        limit = 3 if c == cluster else (2 if i == 1 else 1)
         candidates = [s for s in _subjects_for_cluster(c, answers)
                       if _subject_relevance(s["name"], answers) >= MIN_RELEVANCE]
         for s in candidates[:limit]:
@@ -511,12 +511,12 @@ _SUBJECT_SIGNALS: dict[str, list[tuple[str, float]]] = {
     "Software Engineering":           [("q7", 0.7), ("q1", 0.25), ("q12", 0.15)],
     "Engineering Studies":            [("q12", 0.7), ("q3", 0.25)],
     "Design and Technology":          [("q3", 0.5), ("q8", 0.5)],
-    "Industrial Technology Multimedia": [("q7", 0.6), ("q3", 0.4)],
+    "Industrial Technology Multimedia": [("q7", 0.8), ("q3", 0.2)],
     "Industrial Technology Timber":   [("q3", 0.6), ("q11", 0.4)],
     "Food Technology":                [("q11", 1.0)],
     "Hospitality":                    [("q11", 0.7), ("q6", 0.3)],
     "Biology":                        [("q5", 0.8), ("q10", 0.2)],
-    "Chemistry":                      [("q1", 0.45), ("q10", 0.4), ("q5", 0.15)],
+    "Chemistry":                      [("q5", 0.55), ("q10", 0.2), ("q1", 0.25)],
     "Physics":                        [("q1", 0.6), ("q12", 0.25), ("q10", 0.15)],
     "Mathematics Advanced":           [("q1", 0.7), ("q12", 0.3)],
     "Mathematics Extension 1":        [("q1", 0.8), ("q12", 0.2)],
