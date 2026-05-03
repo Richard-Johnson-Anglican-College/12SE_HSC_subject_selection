@@ -33,7 +33,7 @@ Both paths complete the same 12-question interest survey to ensure consistent Fe
 
 ## 4. Machine Learning & Architecture
 The application uses a hybrid approach:
-* **Data Preprocessing:** Before training or inference, `ml_engine.py` applies `MinMaxScaler` to normalise the mixed survey scales (1–10, 1–5, binary) to [0, 1].
+* **Data Preprocessing:** Before training or inference, `ml_engine.py` applies `MinMaxScaler` to normalise the mixed survey scales (1–10, binary) to [0, 1].
 * **Classification (Random Forest):** A `RandomForestClassifier` (50 trees, max depth 8) identifies the **Subject Cluster** based on interest patterns. Random Forest was chosen over a single Decision Tree or KNN because: (a) the admin dashboard requires `feature_importances_` and `plot_tree` — attributes unavailable on KNN; (b) ensemble averaging is more robust on the small initial dataset. One tree from the forest is extracted and plotted for the white-box visualisation.
 * **Model Cache:** Trained models are cached in memory (`_CACHE` dict in `ml_engine.py`) after the first prediction call. The cache is invalidated on retraining. This eliminates 4 disk reads on every subsequent prediction request.
 * **Regression (Polynomial Regression):** Predicts a continuous satisfaction score using `PolynomialFeatures` (degree=2) + `Ridge(alpha=10)`. Ridge regularisation prevents wild extrapolation caused by 90 polynomial features vs. ~100 training records. *Constraint: Polynomial degree is capped at 2; satisfaction is clamped to [5, 10] after prediction as a safety net against out-of-distribution extrapolation.*
@@ -47,19 +47,19 @@ The application uses a hybrid approach:
 
 ## 6. The Questionnaire (Feature Set)
 1.  **Logic Puzzle (1–10):** Interest in abstract math and logic.
-2.  **Narrative Thread (1–5):** Enjoyment of writing and literature.
+2.  **Narrative Thread (1–10):** Enjoyment of writing and literature.
 3.  **Creator's Tool (Binary):** Interest in physical building/making.
 4.  **Spotlight Factor (1–10):** Comfort with live performance.
-5.  **Human Machine (1–5):** Fascination with biology and health.
+5.  **Human Machine (1–10):** Fascination with biology and health.
 6.  **Entrepreneurial Spirit (Binary):** Interest in business and markets.
 7.  **Digital Architect (1–10):** Interest in coding and tech mechanics.
-8.  **Visual Eye (1–5):** Preference for visual design and arts.
+8.  **Visual Eye (1–10):** Preference for visual design and arts.
 9.  **Social Observer (1–10):** Interest in social issues and law.
 10. **Lab Experiment (Binary):** Enjoyment of the scientific method.
-11. **Culinary Interest (1–5):** Interest in food tech and hospitality.
+11. **Culinary Interest (1–10):** Interest in food tech and hospitality.
 12. **Systems Thinker (1–10):** Focus on processes and systematic solutions.
 
-*Widget consistency rule:* All scored questions (1–5 and 1–10 scales) use **range sliders** with a live value badge. Binary questions (Q3, Q6, Q10) use **Yes/No radio buttons**. No dropdowns or inconsistent widgets.
+*Widget consistency rule:* All scored questions (1–10 scale) use **range sliders** with a live value badge. Binary questions (Q3, Q6, Q10) use **Yes/No radio buttons**. No dropdowns or inconsistent widgets.
 
 ## 7. Subject Clusters (Target Labels)
 The model classifies recommendations into these refined categories:
