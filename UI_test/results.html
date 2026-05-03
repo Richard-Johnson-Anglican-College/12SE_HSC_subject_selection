@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSC Subject Recommendation Engine | Your Results</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <link rel="stylesheet" href="custom.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <main class="container">
+    <nav>
+      <ul>
+        <li><strong>HSC Subject Recommendation Engine</strong></li>
+      </ul>
+      <ul>
+        <li><a href="index.html">Start Over</a></li>
+      </ul>
+    </nav>
+    
+    <header>
+      <h1>Your Subject Match Results</h1>
+      <p>Based on our AI model trained by Year 11-12 students, here is what we found.</p>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <header><i class="dp-icon fas fa-star"></i>Recommended Cluster</header>
+        <h2>STEM</h2>
+        <p>Science, Technology, Engineering, and Mathematics</p>
+        <hr>
+        <h4>Ranked Subjects in Cluster:</h4>
+        <ol>
+          <li><a href="#" onclick="event.preventDefault(); document.getElementById('modal-swe').showModal();">Software Engineering</a></li>
+          <li><a href="#" onclick="event.preventDefault(); document.getElementById('modal-math').showModal();">Mathematics Advanced</a></li>
+          <li><a href="#" onclick="event.preventDefault(); document.getElementById('modal-physics').showModal();">Physics</a></li>
+        </ol>
+      </div>
+      
+      <div class="card">
+        <header><i class="dp-icon fas fa-chart-pie"></i>Match Percentage</header>
+        <h2>87%</h2>
+        <progress value="87" max="100"></progress>
+        <small><strong>What this means:</strong> 87% of older students with interests very similar to yours reported being highly satisfied after choosing these subjects. This indicates a strong chance you will enjoy this pathway too!</small>
+      </div>
+    </div>
+
+    <div class="card">
+      <header><i class="dp-icon fas fa-magic"></i>Why this fits your vibe (AI Analysis)</header>
+      <blockquote>
+        <p>Based on your high interest in coding (Digital Architect) and systematic problem solving (Systems Thinker), you have a profile very similar to older students who excelled in Software Engineering and Mathematics. You enjoy building things virtually and solving complex logic puzzles, making the STEM cluster a natural fit for your HSC journey.</p>
+        <footer>— Synthesised by Gemini AI</footer>
+      </blockquote>
+    </div>
+
+    <div class="card">
+      <header><i class="dp-icon fas fa-chart-bar"></i>Feature Match Visualisation</header>
+      <figure>
+        <img src="https://via.placeholder.com/800x400.png?text=Matplotlib+Chart+Placeholder" alt="Matplotlib visual match report">
+        <figcaption>How your specific interests align with the STEM cohort.</figcaption>
+      </figure>
+    </div>
+
+  </main>
+
+  <!-- Modals -->
+  <dialog id="modal-swe">
+    <article>
+      <header>
+        <a href="#close" aria-label="Close" class="close" onclick="event.preventDefault(); document.getElementById('modal-swe').close();"></a>
+        Software Engineering
+      </header>
+      <p>Software Engineering involves the systematic design, development, and maintenance of software systems. It focuses on programming, algorithms, and project management.</p>
+    </article>
+  </dialog>
+
+  <dialog id="modal-math">
+    <article>
+      <header>
+        <a href="#close" aria-label="Close" class="close" onclick="event.preventDefault(); document.getElementById('modal-math').close();"></a>
+        Mathematics Advanced
+      </header>
+      <p>Mathematics Advanced explores complex algebraic, geometric, and calculus concepts. It is designed for students with a strong aptitude for abstract problem solving.</p>
+    </article>
+  </dialog>
+
+  <dialog id="modal-physics">
+    <article>
+      <header>
+        <a href="#close" aria-label="Close" class="close" onclick="event.preventDefault(); document.getElementById('modal-physics').close();"></a>
+        Physics
+      </header>
+      <p>Physics is the study of matter, energy, and the fundamental forces of nature. It involves theoretical models and practical experiments to understand the universe.</p>
+    </article>
+  </dialog>
+
+</body>
+</html>

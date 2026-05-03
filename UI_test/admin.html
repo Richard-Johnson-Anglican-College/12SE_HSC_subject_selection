@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSC Subject Recommendation Engine | Admin Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <link rel="stylesheet" href="custom.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <main class="container">
+    <nav>
+      <ul>
+        <li><strong>HSC Subject Recommendation Engine</strong></li>
+      </ul>
+      <ul>
+        <li><a href="index.html">Back to App</a></li>
+      </ul>
+    </nav>
+    
+    <h1>Model Maintenance & White-Box Analysis</h1>
+    <p>Use this dashboard to retrain the ML pipeline when new student data is collected and visualise how the model is making decisions.</p>
+
+    <div class="card">
+      <header><i class="dp-icon fas fa-sync-alt"></i>Model Retraining</header>
+      <div class="grid">
+        <div>
+          <p>Current Model: <strong>v1.2 (Trained 2 days ago)</strong></p>
+          <p>Dataset: <strong>142 records</strong></p>
+          <button class="button" style="background: #ef4444;"><i class="fas fa-play"></i> Retrain Model</button>
+        </div>
+        <div>
+          <label>Live Training Logs</label>
+          <textarea readonly rows="6">Loading training_data.csv...
+Performing 80/20 train-test split...
+Training Decision Tree Classifier... Accuracy: 0.82
+Training Polynomial Regressor (Degree 2)... R2: 0.74
+Saving models to .pkl...
+Complete.</textarea>
+        </div>
+      </div>
+    </div>
+
+    <h2>Machine Learning Visualisations</h2>
+    
+    <div class="card">
+      <header><i class="dp-icon fas fa-network-wired"></i>1. Decision Tree Logic Gates</header>
+      <img src="https://via.placeholder.com/800x300.png?text=Decision+Tree+Diagram+(sklearn.tree.plot_tree)" alt="Decision Tree">
+      <small>Shows the exact splits the classification model uses to bucket students.</small>
+    </div>
+
+    <div class="card">
+      <header><i class="dp-icon fas fa-sort-amount-down"></i>2. Feature Importance</header>
+      <img src="https://via.placeholder.com/800x300.png?text=Feature+Importance+Bar+Chart" alt="Feature Importance">
+      <small>Shows which questionnaire inputs carry the most weight in the model's decision.</small>
+    </div>
+
+    <div class="card">
+      <header><i class="dp-icon fas fa-project-diagram"></i>3. Regression Curves</header>
+      <img src="https://via.placeholder.com/800x300.png?text=Polynomial+Regression+Curve" alt="Regression Curve">
+      <small>Visualises the non-linear relationship between interest intensity and satisfaction.</small>
+    </div>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSC Subject Recommendation Engine | Provide Training Data</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <link rel="stylesheet" href="custom.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .question { margin-bottom: 2rem; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <nav>
+      <ul>
+        <li><strong>HSC Subject Recommendation Engine</strong></li>
+      </ul>
+      <ul>
+        <li><a href="index.html">Back to Home</a></li>
+      </ul>
+    </nav>
+    <h2>Interest Questionnaire (Training Data)</h2>
+    <p>Answer the following 12 questions to help our AI learn the typical profiles of students taking specific subjects.</p>
+    
+    <form action="index.html" method="GET">
+      <!-- 1 -->
+      <div class="question card">
+        <label for="q1"><i class="dp-icon fas fa-puzzle-piece"></i>1. Logic Puzzle (1-10)</label>
+        <small>How much do you enjoy abstract math and solving logical puzzles?</small>
+        <input type="range" min="1" max="10" value="5" id="q1" name="q1">
+      </div>
+      
+      <!-- 2 -->
+      <div class="question card">
+        <label><i class="dp-icon fas fa-book-open"></i>2. Narrative Thread (1-5)</label>
+        <small>How much do you enjoy writing stories or analysing literature?</small>
+        <select id="q2" name="q2" required>
+          <option value="" selected disabled>Select an option...</option>
+          <option value="1">1 - Not at all</option>
+          <option value="2">2 - A little</option>
+          <option value="3">3 - Neutral</option>
+          <option value="4">4 - Quite a bit</option>
+          <option value="5">5 - Love it</option>
+        </select>
+      </div>
+
+      <!-- 3 -->
+      <div class="question card">
+        <fieldset>
+          <legend><i class="dp-icon fas fa-tools"></i>3. Creator's Tool</legend>
+          <small>I enjoy physically building, crafting, or making things.</small>
+          <label><input type="radio" name="q3" value="1"> Yes</label>
+          <label><input type="radio" name="q3" value="0"> No</label>
+        </fieldset>
+      </div>
+
+      <!-- 4 -->
+      <div class="question card">
+        <label for="q4"><i class="dp-icon fas fa-microphone"></i>4. Spotlight Factor (1-10)</label>
+        <small>How comfortable are you with live performance or presenting in front of a crowd?</small>
+        <input type="range" min="1" max="10" value="5" id="q4" name="q4">
+      </div>
+
+      <!-- 5 -->
+      <div class="question card">
+        <fieldset>
+          <legend><i class="dp-icon fas fa-dna"></i>5. Human Machine (1-5)</legend>
+          <small>How fascinated are you by biology, anatomy, and how the body works?</small>
+          <label><input type="radio" name="q5" value="1"> 1</label>
+          <label><input type="radio" name="q5" value="2"> 2</label>
+          <label><input type="radio" name="q5" value="3"> 3</label>
+          <label><input type="radio" name="q5" value="4"> 4</label>
+          <label><input type="radio" name="q5" value="5"> 5</label>
+        </fieldset>
+      </div>
+
+      <!-- 6 -->
+      <div class="question card">
+        <fieldset>
+          <legend><i class="dp-icon fas fa-lightbulb"></i>6. Entrepreneurial Spirit</legend>
+          <small>I am interested in business, markets, and how money works.</small>
+          <label><input type="radio" name="q6" value="1"> Yes</label>
+          <label><input type="radio" name="q6" value="0"> No</label>
+        </fieldset>
+      </div>
+
+      <!-- 7 -->
+      <div class="question card">
+        <label for="q7"><i class="dp-icon fas fa-laptop-code"></i>7. Digital Architect (1-10)</label>
+        <small>How interested are you in coding, computers, and how technology works?</small>
+        <input type="range" min="1" max="10" value="5" id="q7" name="q7">
+      </div>
+
+      <!-- 8 -->
+      <div class="question card">
+        <fieldset>
+          <legend><i class="dp-icon fas fa-palette"></i>8. Visual Eye (1-5)</legend>
+          <small>How much do you prefer visual design, drawing, and arts?</small>
+          <label><input type="radio" name="q8" value="1"> 1</label>
+          <label><input type="radio" name="q8" value="2"> 2</label>
+          <label><input type="radio" name="q8" value="3"> 3</label>
+          <label><input type="radio" name="q8" value="4"> 4</label>
+          <label><input type="radio" name="q8" value="5"> 5</label>
+        </fieldset>
+      </div>
+
+      <!-- 9 -->
+      <div class="question card">
+        <label for="q9"><i class="dp-icon fas fa-users"></i>9. Social Observer (1-10)</label>
+        <small>How interested are you in history, social issues, or law?</small>
+        <input type="range" min="1" max="10" value="5" id="q9" name="q9">
+      </div>
+
+      <!-- 10 -->
+      <div class="question card">
+        <fieldset>
+          <legend><i class="dp-icon fas fa-flask"></i>10. Lab Experiment</legend>
+          <small>I enjoy conducting scientific experiments and following the scientific method.</small>
+          <label><input type="radio" name="q10" value="1"> Yes</label>
+          <label><input type="radio" name="q10" value="0"> No</label>
+        </fieldset>
+      </div>
+
+      <!-- 11 -->
+      <div class="question card">
+        <fieldset>
+          <legend><i class="dp-icon fas fa-utensils"></i>11. Culinary Interest (1-5)</legend>
+          <small>How interested are you in food technology and hospitality?</small>
+          <label><input type="radio" name="q11" value="1"> 1</label>
+          <label><input type="radio" name="q11" value="2"> 2</label>
+          <label><input type="radio" name="q11" value="3"> 3</label>
+          <label><input type="radio" name="q11" value="4"> 4</label>
+          <label><input type="radio" name="q11" value="5"> 5</label>
+        </fieldset>
+      </div>
+
+      <!-- 12 -->
+      <div class="question">
+        <label for="q12"><i class="dp-icon fas fa-cogs"></i>12. Systems Thinker (1-10)</label>
+        <small>How much do you focus on processes, systems, and finding systematic solutions?</small>
+        <input type="range" min="1" max="10" value="5" id="q12" name="q12">
+      </div>
+
+      <hr>
+      <h3><i class="dp-icon fas fa-bullseye"></i>Your Actual Choices (Training Data)</h3>
+      <p>Since you are in Year 11 or 12, tell us what subjects you actually chose, and how happy you are with them.</p>
+      
+      <div class="grid">
+        <div>
+          <label for="target_subject_1">Target Subject 1</label>
+          <input type="text" id="target_subject_1" name="target_subject_1" placeholder="e.g. Visual Arts" required>
+        </div>
+        <div>
+          <label for="target_subject_2">Target Subject 2</label>
+          <input type="text" id="target_subject_2" name="target_subject_2" placeholder="e.g. Biology" required>
+        </div>
+      </div>
+      <div class="grid">
+        <div>
+          <label for="target_subject_3">Target Subject 3</label>
+          <input type="text" id="target_subject_3" name="target_subject_3" placeholder="e.g. Mathematics Advanced" required>
+        </div>
+        <div>
+          <label for="target_subject_4">Target Subject 4</label>
+          <input type="text" id="target_subject_4" name="target_subject_4" placeholder="e.g. English Advanced" required>
+        </div>
+      </div>
+      <div class="grid">
+        <div>
+          <label for="target_subject_5">Target Subject 5</label>
+          <input type="text" id="target_subject_5" name="target_subject_5" placeholder="e.g. Chemistry" required>
+        </div>
+        <div>
+          <label for="target_subject_6">Target Subject 6</label>
+          <input type="text" id="target_subject_6" name="target_subject_6" placeholder="e.g. Physics" required>
+        </div>
+      </div>
+      <div id="dynamic-subject" style="display: none;" class="grid">
+        <div>
+          <label for="target_subject_7">Target Subject 7 (Optional)</label>
+          <input type="text" id="target_subject_7" name="target_subject_7" placeholder="e.g. Extension 1 Math">
+        </div>
+        <div></div>
+      </div>
+      <div style="margin-bottom: 2rem;">
+        <button type="button" class="outline" id="toggle-subject-btn" onclick="toggleSubject()">+ Add 7th Subject</button>
+      </div>
+
+      <div>
+        <label for="satisfaction_score">Overall Satisfaction Score (1-10)</label>
+        <small>How happy are you with your HSC subject choices overall?</small>
+        <input type="range" min="1" max="10" value="5" id="satisfaction_score" name="satisfaction_score">
+      </div>
+
+      <button type="submit" class="button"><i class="fas fa-database"></i> Submit Data & Train Model</button>
+    </form>
+  </main>
+  <script>
+    function toggleSubject() {
+      const container = document.getElementById('dynamic-subject');
+      const btn = document.getElementById('toggle-subject-btn');
+      if (container.style.display === 'none') {
+        container.style.display = 'grid';
+        btn.innerText = '- Remove 7th Subject';
+      } else {
+        container.style.display = 'none';
+        btn.innerText = '+ Add 7th Subject';
+        document.getElementById('target_subject_7').value = '';
+      }
+    }
+  </script>
+</body>
+</html>

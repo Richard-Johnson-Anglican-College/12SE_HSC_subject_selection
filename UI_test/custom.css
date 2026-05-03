@@ -1,0 +1,100 @@
+/* ===========================
+   Typography System — Inter Variable
+   =========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap');
+
+:root {
+  --font-family: 'Inter', system-ui, sans-serif;
+  --pico-font-family-sans-serif: var(--font-family);
+
+  /* Font sizes */
+  --fs-display: 2.5rem;
+  --fs-h1: 2rem;
+  --fs-h2: 1.5rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+  --fs-label: 0.875rem;
+
+  /* Line heights */
+  --lh-tight: 1.2;
+  --lh-normal: 1.5;
+
+  /* Spacing scale */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+
+  /* Card + UI tokens */
+  --radius-card: 12px;
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* Apply global typography */
+body {
+  font-family: var(--font-family);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+}
+
+/* Headings */
+h1, h2, h3 {
+  line-height: var(--lh-tight);
+  font-weight: 600;
+  font-family: var(--font-family);
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+/* Cards */
+.card {
+  background: var(--pico-card-background-color, #111928); /* Fallback to a sleek dark colour */
+  padding: var(--space-3);
+  border-radius: var(--radius-card);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* Stronger shadow for dark mode */
+  margin-bottom: var(--space-3);
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle bright border for dark mode */
+}
+
+/* Buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: #2563eb;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: var(--fs-body);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.button:hover {
+  background: #1e4fcf;
+  color: white;
+  text-decoration: none;
+}
+
+/* Existing Custom UI Label Class */
+.label, small.label, .question small, form small {
+  font-size: var(--fs-label);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  color: var(--pico-muted-color);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* FontAwesome Icon Styling */
+.dp-icon {
+  margin-right: 0.5rem;
+  color: #2563eb; /* Updated to match button primary */
+}
