@@ -252,14 +252,22 @@ Then reload. Done.
 - Check the error logs (Web tab → "Log files")
 
 #### **If git pull fails with "local changes would be overwritten"**
-This happens if you have local changes (e.g., from model training on PythonAnywhere). Stash them and pull:
+This happens if you have local changes (e.g., from model training on PythonAnywhere). Two options:
 
+**Option A: Stash and pull (keeps changes for later)**
 ```bash
 git stash
 git pull
 ```
-
 Then reload the web app. The stashed changes are saved if needed later.
+
+**Option B: Discard GitHub version (for training_data.csv)**
+If you want to keep the PythonAnywhere version (e.g., `training_data.csv` with accumulated student data) and discard the older GitHub version:
+```bash
+git checkout -- training_data.csv
+git pull
+```
+This keeps your local data and pulls other code changes.
 
 ---
 
