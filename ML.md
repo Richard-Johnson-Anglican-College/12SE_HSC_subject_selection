@@ -263,18 +263,31 @@ This project uses **three different types of AI** working together. This is call
 Without grounding, Gemini might hallucinate subjects or make up reasons. The prompt explicitly passes the ML results as structured context:
 
 ```
-CONTEXT:
-• Predicted cluster: Science (69% confidence)
-• Match percentage: 80%
-• Recommended subjects: Physics, Chemistry
-• Top interest signals: Logic/Maths (9/10), Lab work (Yes), Systems thinking (8/10)
+### WHAT THE MODEL FOUND ###
+Primary strength area: Science (69% match)
+NOTE: 69% means roughly 7 in every 10 of this student's interest answers pointed toward Science subjects.
+Subject area affinities: Science 69%, TAS 18%
 
-TASK:
-Write a 3-sentence personalised explanation of why these subjects fit this student.
-Do not invent subjects not listed above.
+Recommended subjects across ALL areas:
+  • Science: Physics, Chemistry
+  • Maths: Mathematics Advanced
+
+### STUDENT'S KEY INTERESTS ###
+logic and maths (9/10); science experiments and lab work; systems thinking and engineering (8/10)
+
+### YOUR TASK ###
+Write a warm, encouraging 4-5 sentence explanation that covers:
+1. WHY these subjects suit them — connect their interests to specific subjects.
+2. WHY the combination makes sense — how the subject areas complement each other.
+3. WHAT KIND OF STUDENT thrives here — paint a picture of the learner type.
+4. A FORWARD-LOOKING sentence — one example of where this could lead.
+5. Mention that around 7 in every 10 of their answers pointed toward Science — not a score, an interest signal.
+Do not invent subjects not listed above. Maximum 120 words.
 ```
 
 This is called **Retrieval-Augmented Generation (RAG)** in the industry — grounding a generative model's output in verified data so it cannot hallucinate facts.
+
+> **Note on prompt evolution:** The task section now asks for 4–5 sentences covering the *why* behind the recommendation (interest connection, cross-cluster logic, learner type, forward-looking pathway, and match percentage framed as "X in every 10 answers"). The match fraction is pre-computed in Python (`round(match_pct / 10)`) before being passed to Gemini — this prevents the model from miscalculating it.
 
 ---
 
