@@ -71,6 +71,11 @@ def survey_train():
             flash('Please select at least 5 subjects.', 'error')
             return redirect(url_for('survey_train'))
 
+        english_subjects = {'English Advanced', 'English Extension', 'English Standard'}
+        if not any(s in english_subjects for s in target_subjects):
+            flash('English is compulsory — please select English Advanced, Extension, or Standard.', 'error')
+            return redirect(url_for('survey_train'))
+
         student_id = dh.append_training_row(answers, target_subjects, satisfaction)
         flash(f'Thank you! Your data has been saved (ID: {student_id}).', 'success')
         return redirect(url_for('index'))
