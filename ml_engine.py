@@ -267,12 +267,12 @@ def predict(answers: dict) -> dict:
 
     # English is compulsory — always include it if not already recommended
     if not any(s["cluster"] == "English" for s in subjects):
-        q2 = float(answers.get("q2", 3))
+        q2 = float(answers.get("q2", 5))
         english_all = _subjects_for_cluster("English", answers)
         english_map = {s["name"]: s for s in english_all}
-        if q2 >= 4:
+        if q2 >= 8:
             suggested = [english_map.get("English Advanced"), english_map.get("English Extension")]
-        elif q2 >= 2:
+        elif q2 >= 4:
             suggested = [english_map.get("English Advanced")]
         else:
             suggested = [english_map.get("English Standard")]
@@ -538,7 +538,7 @@ _SUBJECT_SIGNALS: dict[str, list[tuple[str, float]]] = {
     "School of Languages":            [("q2", 0.6), ("q9", 0.4)],
 }
 
-_Q_MAX = {"q1":10,"q2":5,"q3":1,"q4":10,"q5":5,"q6":1,"q7":10,"q8":5,"q9":10,"q10":1,"q11":5,"q12":10}
+_Q_MAX = {"q1":10,"q2":10,"q3":1,"q4":10,"q5":10,"q6":1,"q7":10,"q8":10,"q9":10,"q10":1,"q11":10,"q12":10}
 
 
 def _subject_relevance(name: str, answers: dict) -> float:

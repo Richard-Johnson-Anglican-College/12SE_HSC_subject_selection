@@ -87,12 +87,12 @@ def generate_summary(
     highlights = []
     q_map = [
         ("q1",  int(answers.get("q1",  5)), 10, "logic and maths"),
-        ("q2",  int(answers.get("q2",  3)),  5, "writing and literature"),
+        ("q2",  int(answers.get("q2",  5)), 10, "writing and literature"),
         ("q3",  int(answers.get("q3",  0)),  1, "hands-on building and making"),
         ("q4",  int(answers.get("q4",  5)), 10, "performance and creative expression"),
-        ("q5",  int(answers.get("q5",  3)),  5, "biology and the human body"),
+        ("q5",  int(answers.get("q5",  5)), 10, "biology and the human body"),
         ("q7",  int(answers.get("q7",  5)), 10, "coding and technology"),
-        ("q8",  int(answers.get("q8",  3)),  5, "visual arts and design"),
+        ("q8",  int(answers.get("q8",  5)), 10, "visual arts and design"),
         ("q9",  int(answers.get("q9",  5)), 10, "society, history, and law"),
         ("q10", int(answers.get("q10", 0)),  1, "science experiments and lab work"),
         ("q12", int(answers.get("q12", 5)), 10, "systems thinking and engineering"),

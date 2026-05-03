@@ -1,6 +1,6 @@
 {
-  "version": "1.19",
-  "trained_at": "2026-05-03T22:09:45",
+  "version": "1.20",
+  "trained_at": "2026-05-03T22:31:38",
   "record_count": 206,
   "accuracy": 0.7857,
   "r2": 0.2822,
@@ -13,5 +13,5 @@
     "TAS",
     "Visual and Performing Arts"
   ],
-  "log": "Loading training_data.csv...  206 records found.\nPerforming 80/20 train-test split...\nTraining Random Forest Classifier (trees=50)...  Accuracy: 78.57%\nTraining Polynomial Regressor (degree=2)...  R\u00b2: 0.2822\nSaving models to models/  \u2713\nGenerating visualisation charts...  \u2713\nComplete. Model v1.19 saved."
+  "log": "Loading training_data.csv...  206 records found.\nPerforming 80/20 train-test split...\nTraining Random Forest Classifier (trees=50)...  Accuracy: 78.57%\nTraining Polynomial Regressor (degree=2)...  R\u00b2: 0.2822\nSaving models to models/  \u2713\nGenerating visualisation charts...  \u2713\nComplete. Model v1.20 saved."
 }

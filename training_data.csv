@@ -1,207 +1,207 @@
 student_id,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,target_subject_1,target_subject_2,target_subject_3,target_subject_4,target_subject_5,target_subject_6,target_subject_7,satisfaction_score
-S001,4,1,0,1,5,0,5,1,6,0,3,5,Industrial Technology Multimedia,Physics,Health and Movement Science,Physics,Visual Arts,Hospitality,English Standard,9
-S002,3,2,0,4,4,1,5,1,2,1,3,5,Mathematics Advanced,Biblical Studies,Industrial Technology Multimedia,Health and Movement Science,School of Languages,Drama,,10
-S003,10,2,1,6,1,0,7,3,4,1,3,8,English Extension,Software Engineering,Mathematics Advanced,Physics,Mathematics Standard,Hospitality,Health and Movement Science,9
-S004,5,4,1,8,3,1,2,2,8,0,2,6,Biology,Drama,Society and Culture,Business Studies,Health and Movement Science,Legal Studies,Biblical Studies,10
-S005,9,2,1,5,4,0,1,3,2,1,3,7,English Standard,Physics,Visual Arts,Industrial Technology Multimedia,Mathematics Extension 2,Biology,English Extension,7
-S006,6,2,1,3,4,1,3,2,3,0,3,2,Biology,Health and Movement Science,Biblical Studies,Drama,Biblical Studies,Food Technology,,9
-S007,8,1,0,4,3,0,9,2,2,1,1,9,Mathematics Extension 1,Geography,Mathematics Advanced,Biology,Mathematics Standard,Health and Movement Science,,9
-S008,3,4,1,3,2,1,2,3,9,1,3,1,Engineering Studies,Physics,English Standard,School of Languages,English Advanced,English Extension,,7
-S009,7,1,0,6,4,0,3,1,5,1,2,10,Engineering Studies,Physics,Mathematics Advanced,Visual Arts,Mathematics Extension 1,Biology,,7
-S010,8,1,1,2,3,0,7,2,3,1,3,8,Visual Arts,Mathematics Standard,Visual Arts,Mathematics Extension 1,Health and Movement Science,Mathematics Extension 2,Hospitality,8
-S011,2,2,0,6,5,0,1,2,1,0,2,1,English Extension,English Extension,Hospitality,Drama,Hospitality,Health and Movement Science,,9
-S012,10,3,1,1,5,1,4,1,6,1,3,10,Mathematics Extension 1,Physics,English Advanced,Hospitality,Health and Movement Science,Biology,,8
-S013,3,3,0,9,3,0,6,4,2,0,3,3,Visual Arts,Health and Movement Science,Society and Culture,Commerce,Drama,Music,,7
-S014,4,4,0,7,1,1,1,3,9,0,1,3,Biology,English Extension,Community and Family Studies,Legal Studies,Business Studies,Mathematics Standard,,7
-S015,5,2,1,6,2,1,7,1,6,0,4,9,Hospitality,Ancient History,Health and Movement Science,Food Technology,Visual Arts,Engineering Studies,Ancient History,9
-S016,3,3,0,10,1,1,5,4,1,1,1,2,Health and Movement Science,Music,Visual Arts,English Advanced,Physics,Drama,,7
-S017,4,5,1,2,2,1,2,3,8,1,1,1,English Standard,English Extension,Music,English Advanced,Physics,Health and Movement Science,,7
-S018,3,2,1,7,1,0,1,4,4,1,2,5,English Standard,Physics,Drama,Visual Arts,Mathematics Extension 1,Music,School of Languages,8
-S019,6,1,0,8,3,1,5,4,3,1,1,1,Commerce,Health and Movement Science,Design and Technology,Visual Arts,Music,Drama,Physics,9
-S020,6,5,0,7,2,1,3,3,7,1,2,1,Biblical Studies,Legal Studies,Biology,Industrial Technology Timber,Music,Geography,,10
-S021,10,1,1,2,1,1,9,2,2,0,3,7,Community and Family Studies,Mathematics Standard,Commerce,Business Studies,Mathematics Extension 2,Mathematics Extension 1,,10
-S022,5,2,0,2,5,1,2,1,4,0,3,4,English Advanced,English Extension,English Advanced,Music,Health and Movement Science,Software Engineering,Physics,9
-S023,4,5,0,10,2,1,2,1,9,0,1,2,Commerce,Food Technology,Community and Family Studies,Legal Studies,Mathematics Advanced,Health and Movement Science,,8
-S024,4,5,1,7,2,1,6,2,10,1,2,3,Health and Movement Science,Economics,Health and Movement Science,Community and Family Studies,Society and Culture,Drama,,7
-S025,10,3,0,3,3,1,8,1,5,1,1,7,Mathematics Standard,Biology,Biology,Mathematics Advanced,Mathematics Extension 1,English Advanced,,8
-S026,2,5,1,3,1,0,2,2,8,0,2,4,Health and Movement Science,English Standard,Software Engineering,Biology,English Extension,English Advanced,,10
-S027,10,1,0,5,1,1,8,2,4,1,2,9,Software Engineering,Health and Movement Science,Mathematics Advanced,Health and Movement Science,Mathematics Extension 1,Health and Movement Science,,10
-S028,1,2,0,10,3,1,6,5,5,0,3,1,Health and Movement Science,Drama,Music,Health and Movement Science,Visual Arts,Mathematics Standard,,7
-S029,10,1,1,2,2,1,10,1,4,0,2,9,Mathematics Advanced,Software Engineering,Music,Biology,Health and Movement Science,Mathematics Extension 2,,8
-S030,1,3,1,4,1,0,9,1,6,1,5,8,Biology,Industrial Technology Timber,Food Technology,Hospitality,Physics,English Standard,Music,8
-S031,9,2,1,4,2,0,9,2,1,1,1,9,English Advanced,Software Engineering,Mathematics Standard,Mathematics Advanced,Music,Physics,,7
-S032,5,1,1,8,1,1,3,4,4,1,1,6,Music,Mathematics Extension 2,Drama,English Advanced,Visual Arts,English Standard,,7
-S033,9,3,0,2,5,0,3,3,1,1,1,10,Hospitality,Physics,Biology,Mathematics Extension 2,Biblical Studies,English Advanced,,10
-S034,3,4,1,8,2,1,4,3,9,0,1,4,Health and Movement Science,Drama,School of Languages,Legal Studies,Community and Family Studies,Engineering Studies,,10
-S035,4,3,0,9,2,0,1,4,5,1,3,2,Music,English Standard,Drama,Health and Movement Science,Visual Arts,Commerce,,7
-S036,9,3,1,3,5,0,2,2,4,1,2,10,Visual Arts,Mathematics Extension 1,Health and Movement Science,Physics,Biology,Health and Movement Science,,8
-S037,4,5,1,7,1,1,5,1,7,0,2,2,Visual Arts,Economics,Biblical Studies,Society and Culture,Industrial Technology Timber,Health and Movement Science,,9
-S038,2,5,1,1,2,0,5,1,7,0,1,4,English Standard,English Advanced,Engineering Studies,Design and Technology,Mathematics Extension 1,English Extension,,7
-S039,2,2,1,5,3,1,9,2,2,0,4,10,Mathematics Extension 1,Hospitality,Health and Movement Science,Industrial Technology Multimedia,Biology,Food Technology,,9
-S040,2,4,1,6,1,0,6,3,10,1,3,2,Visual Arts,English Standard,English Advanced,English Extension,Biblical Studies,Mathematics Standard,,10
-S041,3,3,1,1,1,1,10,1,5,0,4,8,Hospitality,Mathematics Extension 2,Music,Industrial Technology Multimedia,Biology,Design and Technology,,9
-S042,8,2,0,6,4,0,6,2,5,1,2,9,Health and Movement Science,Geography,Health and Movement Science,English Extension,Biology,Physics,,8
-S043,3,4,0,7,1,1,5,1,7,0,2,1,Society and Culture,English Advanced,Mathematics Extension 1,Commerce,Community and Family Studies,English Extension,,7
-S044,2,1,0,1,4,1,3,2,6,1,1,4,Health and Movement Science,Mathematics Standard,Industrial Technology Timber,Geography,Visual Arts,Biology,,9
-S045,1,2,0,8,2,1,1,5,5,0,1,2,English Extension,Visual Arts,Biology,Health and Movement Science,Music,Drama,,8
-S046,5,3,1,8,2,0,6,4,5,0,2,2,Music,Visual Arts,Mathematics Extension 2,Drama,Ancient History,Biology,,8
-S047,1,4,0,8,2,1,1,3,10,1,1,2,Physics,Community and Family Studies,Visual Arts,Geography,Hospitality,Ancient History,Visual Arts,10
-S048,3,4,0,7,2,1,6,2,9,0,2,3,English Advanced,Geography,Community and Family Studies,English Extension,Visual Arts,Biblical Studies,,7
-S049,4,5,0,2,3,0,1,2,9,1,3,2,English Advanced,Health and Movement Science,English Standard,English Extension,Design and Technology,Biology,English Standard,8
-S050,10,2,0,6,5,1,1,3,6,1,3,7,English Standard,Food Technology,Biology,Society and Culture,Industrial Technology Multimedia,Physics,,10
-S051,4,1,1,10,3,1,3,4,5,0,3,4,Music,Biology,Mathematics Advanced,Drama,Visual Arts,Legal Studies,,7
-S052,7,2,1,5,4,0,3,1,3,1,1,9,Mathematics Standard,Health and Movement Science,Music,English Advanced,Physics,Biology,,10
-S053,5,3,0,7,2,1,5,5,1,1,3,6,School of Languages,Music,Hospitality,Drama,Visual Arts,Hospitality,Mathematics Extension 1,7
-S054,3,3,0,10,2,0,4,4,6,1,3,1,Health and Movement Science,Food Technology,Health and Movement Science,Visual Arts,Drama,Music,Physics,8
-S055,8,1,1,2,3,0,10,3,1,1,1,9,Software Engineering,Health and Movement Science,Mathematics Extension 1,Health and Movement Science,Mathematics Standard,English Advanced,,9
-S056,9,2,1,1,5,1,1,2,3,1,3,10,Biology,English Standard,Industrial Technology Timber,Industrial Technology Multimedia,Drama,Physics,,9
-S057,7,1,1,1,2,0,8,2,5,0,3,10,Health and Movement Science,Mathematics Extension 1,Biology,Mathematics Extension 2,Mathematics Advanced,Drama,,7
-S058,10,1,1,3,4,0,3,3,4,1,2,9,Physics,Drama,Biology,Society and Culture,Mathematics Extension 1,Visual Arts,,7
-S059,3,5,0,6,3,0,3,2,8,1,2,5,English Standard,Physics,Physics,English Extension,English Advanced,Engineering Studies,,10
-S060,6,1,1,1,5,0,6,3,6,0,1,2,Economics,Music,Mathematics Extension 1,Mathematics Advanced,Design and Technology,Health and Movement Science,,8
-S061,3,3,0,9,2,0,1,4,1,0,1,4,Drama,Society and Culture,Biology,Health and Movement Science,Visual Arts,Music,,7
-S062,1,2,0,10,2,1,5,5,4,1,1,4,Drama,Visual Arts,Design and Technology,Music,Mathematics Extension 1,Biology,,9
-S063,5,2,0,8,2,0,6,5,1,0,3,5,Visual Arts,Physics,Drama,Geography,Music,Industrial Technology Timber,,7
-S064,5,1,1,1,5,1,4,2,2,1,3,1,Health and Movement Science,Music,Music,Visual Arts,Drama,Legal Studies,,9
-S065,2,4,0,7,2,1,1,1,10,1,2,4,Biology,Mathematics Advanced,Economics,English Standard,Society and Culture,Ancient History,,10
-S066,5,4,0,4,2,0,2,2,7,1,2,5,Software Engineering,English Standard,English Advanced,English Extension,Geography,Commerce,,9
-S067,8,3,1,4,3,1,10,1,4,0,3,9,Physics,Engineering Studies,Mathematics Extension 1,Health and Movement Science,Mathematics Extension 2,Mathematics Standard,,7
-S068,6,1,1,5,3,1,8,2,2,1,5,10,Hospitality,Industrial Technology Timber,Design and Technology,Health and Movement Science,Biology,Legal Studies,,8
-S069,6,2,1,5,1,1,8,1,4,0,4,9,Community and Family Studies,Engineering Studies,Food Technology,Health and Movement Science,Health and Movement Science,Hospitality,,8
-S070,6,5,0,4,1,1,5,2,7,1,1,1,Visual Arts,English Standard,Music,Biology,English Advanced,English Extension,Biology,10
-S071,5,3,1,3,5,0,2,2,5,0,1,2,Biblical Studies,Mathematics Extension 1,Physics,Health and Movement Science,Physics,English Advanced,,7
-S072,6,1,0,2,5,1,6,2,5,0,2,3,Biology,English Extension,Health and Movement Science,English Standard,Music,Economics,,8
-S073,6,5,1,2,1,0,4,1,10,1,3,1,English Advanced,English Standard,Software Engineering,Legal Studies,Music,English Extension,Society and Culture,7
-S074,9,1,0,2,4,0,2,3,3,1,1,10,Mathematics Extension 2,English Advanced,Physics,Biology,Health and Movement Science,English Extension,,7
-S075,1,5,0,7,1,1,6,1,7,0,3,3,Society and Culture,Food Technology,Economics,Biblical Studies,Biology,Mathematics Standard,,10
-S076,8,3,0,6,1,1,9,2,5,0,1,8,Industrial Technology Timber,English Advanced,Music,Mathematics Extension 1,Mathematics Standard,Mathematics Advanced,,8
-S077,8,1,1,2,2,0,7,1,4,1,1,8,Industrial Technology Multimedia,Biblical Studies,Mathematics Advanced,Software Engineering,Engineering Studies,Mathematics Extension 2,,9
-S078,5,2,1,4,2,1,9,2,1,0,4,9,Visual Arts,Food Technology,Physics,Hospitality,Biology,Design and Technology,,8
-S079,5,4,0,9,1,1,2,1,10,0,1,2,Software Engineering,Engineering Studies,Biblical Studies,Business Studies,School of Languages,English Standard,,10
-S080,6,1,1,7,3,1,3,5,4,1,3,3,English Standard,Industrial Technology Multimedia,Physics,Visual Arts,Drama,Music,Community and Family Studies,10
-S081,5,4,1,1,1,0,2,1,7,0,2,2,Health and Movement Science,Biology,English Extension,English Standard,English Advanced,Engineering Studies,,8
-S082,5,3,0,3,4,0,4,2,3,1,2,1,Economics,Health and Movement Science,Drama,Engineering Studies,English Advanced,Geography,,8
-S083,3,3,0,5,4,0,4,1,5,0,1,6,Visual Arts,Mathematics Standard,Biology,Industrial Technology Multimedia,English Advanced,Health and Movement Science,,9
-S084,9,1,0,1,5,1,6,1,5,1,3,10,Biology,Mathematics Extension 1,Music,Physics,Health and Movement Science,Legal Studies,,8
-S085,1,4,1,5,3,1,3,3,7,0,3,6,English Standard,English Extension,Geography,Society and Culture,English Advanced,Visual Arts,,7
-S086,10,2,0,3,4,1,6,2,3,1,3,10,Mathematics Advanced,Physics,Biology,Ancient History,Engineering Studies,Drama,,10
-S087,4,1,1,1,3,0,9,1,6,1,4,9,Biology,Industrial Technology Timber,Software Engineering,Industrial Technology Multimedia,Legal Studies,Engineering Studies,Physics,8
-S088,1,1,0,2,5,0,4,1,6,1,1,1,Physics,Geography,Music,Ancient History,Health and Movement Science,Physics,,9
-S089,2,2,1,2,4,0,3,3,3,1,1,4,Biblical Studies,Health and Movement Science,Drama,Mathematics Standard,Physics,English Extension,,7
-S090,1,4,1,1,2,1,6,3,10,0,1,5,English Standard,Industrial Technology Timber,English Extension,Industrial Technology Multimedia,Health and Movement Science,English Advanced,,9
-S091,4,3,1,7,3,1,6,5,2,1,1,4,Mathematics Extension 1,Health and Movement Science,Music,Visual Arts,Physics,Drama,,9
-S092,6,5,0,5,3,1,4,3,7,1,1,5,English Standard,Mathematics Extension 2,English Extension,Society and Culture,Hospitality,English Advanced,,7
-S093,8,2,0,5,2,1,10,1,6,0,3,9,Mathematics Advanced,Economics,Mathematics Extension 2,Hospitality,Mathematics Standard,English Standard,,8
-S094,4,4,1,10,2,1,3,3,8,0,2,5,Society and Culture,Mathematics Extension 2,Biology,Ancient History,Business Studies,Software Engineering,,8
-S095,6,1,1,10,2,1,3,5,3,1,3,1,Software Engineering,Music,Visual Arts,Health and Movement Science,Drama,Physics,,9
-S096,2,4,1,3,3,1,3,1,9,1,3,1,English Extension,Physics,Ancient History,Business Studies,English Standard,English Advanced,English Advanced,8
-S097,4,5,1,5,1,1,4,2,7,1,3,1,Mathematics Standard,Physics,English Standard,English Advanced,Drama,English Extension,,8
-S098,6,2,1,3,2,1,9,2,3,0,4,7,Mathematics Extension 1,Food Technology,Health and Movement Science,School of Languages,Industrial Technology Multimedia,Design and Technology,English Advanced,7
-S099,3,3,0,10,2,1,1,5,3,1,3,4,Visual Arts,Engineering Studies,Engineering Studies,Drama,Health and Movement Science,Music,,10
-S100,8,2,1,5,2,0,10,3,3,1,2,8,Biology,Mathematics Standard,Engineering Studies,English Extension,Mathematics Extension 2,Software Engineering,,7
-SB02094,8,4,1,2,2,1,7,4,6,1,4,7,English Advanced,Mathematics Standard,Software Engineering,Physics,Design and Technology,Industrial Technology Multimedia,,8
-S101,9,2,0,3,3,0,5,2,3,1,1,8,Chemistry,Physics,Mathematics Advanced,English Advanced,,,,9
-S102,7,3,0,4,5,0,3,2,4,1,2,6,Chemistry,Biology,Mathematics Advanced,English Advanced,Health and Movement Science,,,9
-S103,10,2,0,2,2,0,6,1,2,1,1,9,Chemistry,Physics,Mathematics Extension 1,Mathematics Extension 2,English Advanced,,,10
-S104,6,4,0,5,4,1,3,3,6,1,2,5,Chemistry,Biology,Mathematics Standard,English Advanced,Geography,,,8
-S105,9,2,1,3,2,0,8,2,2,1,1,9,Chemistry,Physics,Mathematics Advanced,Software Engineering,English Advanced,,,9
-S106,7,5,0,4,5,0,2,3,5,1,2,5,Chemistry,Biology,English Extension,Mathematics Advanced,English Advanced,,,9
-S107,8,3,0,4,2,1,5,2,7,1,1,7,Chemistry,Physics,Mathematics Advanced,Economics,English Advanced,,,8
-S108,6,3,1,4,4,0,5,4,3,1,3,6,Chemistry,Biology,Design and Technology,Mathematics Standard,English Advanced,,,8
-S109,7,4,0,7,3,0,3,5,4,1,2,5,Chemistry,Visual Arts,Mathematics Advanced,English Advanced,Drama,,,7
-S110,10,2,0,2,3,0,7,1,2,1,1,10,Chemistry,Physics,Mathematics Extension 2,Mathematics Extension 1,English Advanced,,,10
-S111,8,3,0,3,5,0,3,2,4,1,2,6,Chemistry,Biology,Mathematics Advanced,Health and Movement Science,English Advanced,,,9
-S112,9,2,1,3,2,0,6,2,3,1,1,9,Chemistry,Physics,Engineering Studies,Mathematics Advanced,English Advanced,,,9
-S113,10,2,0,2,2,0,9,1,2,1,1,10,Chemistry,Physics,Software Engineering,Mathematics Extension 1,English Advanced,,,10
-S114,10,2,0,2,3,0,6,1,2,1,1,9,Chemistry,Physics,Mathematics Extension 2,Mathematics Extension 1,English Advanced,,,10
-S115,9,2,1,3,2,0,9,2,3,1,1,9,Physics,Software Engineering,Engineering Studies,Mathematics Advanced,English Advanced,,,9
-S116,9,3,0,4,3,0,5,2,6,1,1,8,Chemistry,Physics,Mathematics Extension 1,Legal Studies,English Advanced,,,9
-S117,9,3,0,3,2,1,10,2,5,0,1,9,Software Engineering,Mathematics Extension 1,Physics,English Advanced,Economics,,,9
-S118,10,5,0,4,3,0,5,2,4,1,1,9,Mathematics Extension 2,Mathematics Extension 1,Chemistry,Physics,English Extension,,,10
-S119,8,3,0,5,5,0,3,2,4,1,2,6,Biology,Chemistry,Mathematics Advanced,English Advanced,Health and Movement Science,,,9
-S120,9,2,1,2,2,0,10,2,2,1,1,10,Software Engineering,Mathematics Extension 1,Engineering Studies,Physics,English Advanced,,,10
-S121,5,2,1,4,2,0,8,4,3,0,2,7,Industrial Technology Multimedia,Software Engineering,Mathematics Standard,English Standard,Design and Technology,,,8
-S122,8,4,0,5,3,0,4,3,6,1,2,7,Physics,Chemistry,Mathematics Advanced,English Advanced,Society and Culture,,,8
-S123,9,2,1,2,1,0,10,3,2,0,1,9,Software Engineering,Industrial Technology Multimedia,Mathematics Extension 1,Physics,English Advanced,,,9
-S124,4,2,1,4,2,1,6,5,3,0,4,6,Design and Technology,Industrial Technology Multimedia,Mathematics Standard,English Standard,Food Technology,,,8
-S125,7,4,0,5,2,1,4,2,8,0,2,6,Mathematics Advanced,Economics,Business Studies,English Advanced,Legal Studies,,,9
-S126,10,3,0,3,3,0,5,2,5,1,1,9,Mathematics Extension 2,Chemistry,Physics,English Advanced,Geography,,,10
-S127,2,5,0,10,2,0,2,5,5,0,2,2,Drama,Music,English Extension,Visual Arts,English Advanced,,,9
-S128,3,5,0,9,2,0,2,3,7,0,2,3,Drama,English Extension,Legal Studies,Society and Culture,English Advanced,,,9
-S129,3,3,1,5,3,0,3,5,4,0,2,4,Visual Arts,Design and Technology,Mathematics Standard,English Advanced,Health and Movement Science,,,8
-S130,3,3,0,9,4,0,2,4,4,0,2,3,Music,Drama,English Advanced,Health and Movement Science,Mathematics Standard,,,9
-S131,5,5,0,5,2,1,3,2,9,0,2,5,Legal Studies,Economics,English Extension,Business Studies,English Advanced,,,9
-S132,3,5,0,5,2,0,2,3,9,0,2,3,Ancient History,Legal Studies,English Extension,Society and Culture,English Advanced,,,9
-S133,6,4,0,5,2,1,5,2,8,0,2,6,Economics,Business Studies,Mathematics Advanced,English Advanced,Legal Studies,,,8
-S134,4,4,0,4,2,0,2,3,8,1,2,4,Geography,Ancient History,English Advanced,Legal Studies,Mathematics Standard,,,8
-S135,3,5,0,6,2,0,2,3,9,0,2,3,Society and Culture,English Extension,Legal Studies,English Advanced,Ancient History,,,9
-S136,7,3,0,4,2,1,8,2,6,0,2,7,Business Studies,Software Engineering,Mathematics Advanced,English Advanced,Economics,,,8
-S137,4,3,0,7,5,0,2,2,4,1,3,4,Health and Movement Science,Biology,English Advanced,Mathematics Standard,Community and Family Studies,,,9
-S138,4,3,0,6,5,0,2,2,5,1,3,4,Health and Movement Science,Biology,Mathematics Standard,English Advanced,Community and Family Studies,,,8
-S139,3,2,1,4,3,1,2,3,4,0,5,4,Food Technology,Hospitality,English Standard,Business Studies,Mathematics Standard,,,8
-S140,3,2,1,5,3,1,3,4,4,0,5,5,Hospitality,Food Technology,Business Studies,English Standard,Design and Technology,,,9
-S141,4,3,1,4,2,0,7,5,3,0,2,6,Industrial Technology Multimedia,Design and Technology,Visual Arts,English Advanced,Mathematics Standard,,,8
-S142,8,2,1,3,2,0,5,3,3,1,1,9,Engineering Studies,Mathematics Advanced,Physics,English Advanced,Design and Technology,,,9
-S143,7,2,1,3,1,0,8,3,2,0,1,9,Engineering Studies,Industrial Technology Multimedia,Software Engineering,Mathematics Advanced,English Standard,,,9
-S144,4,2,1,3,2,0,4,3,2,0,3,6,Industrial Technology Timber,Engineering Studies,Design and Technology,English Standard,Mathematics Standard,,,8
-S145,2,4,0,8,2,0,2,5,4,0,2,2,Visual Arts,Music,English Advanced,Drama,Mathematics Standard,,,9
-S146,3,5,0,5,2,0,2,3,8,0,2,3,School of Languages,English Extension,Society and Culture,English Advanced,Ancient History,,,9
-S147,3,3,0,6,5,0,2,2,6,1,3,3,Community and Family Studies,Health and Movement Science,English Standard,Biology,Mathematics Standard,,,8
-S148,9,2,0,2,3,0,8,1,2,1,1,9,Mathematics Extension 1,Chemistry,Physics,English Advanced,Software Engineering,,,10
-S149,5,4,0,5,2,1,3,2,8,0,2,5,Economics,Business Studies,Legal Studies,English Advanced,Mathematics Standard,,,8
-S150,4,3,0,6,5,0,2,2,5,1,3,4,Biology,Health and Movement Science,Mathematics Standard,English Advanced,Community and Family Studies,,,9
-S151,9,2,0,3,4,0,5,1,3,1,1,8,Mathematics Extension 1,Mathematics Advanced,Physics,Chemistry,English Advanced,,,9
-S152,9,2,0,2,2,0,10,1,2,1,1,9,Software Engineering,Mathematics Extension 1,English Advanced,Physics,Chemistry,,,10
-S153,3,3,0,8,2,1,3,5,4,0,4,3,Drama,Visual Arts,English Advanced,Mathematics Standard,Hospitality,,,8
-S154,7,3,0,4,5,0,3,2,5,1,2,6,Biology,Chemistry,English Advanced,Mathematics Advanced,Legal Studies,,,9
-S155,4,5,0,4,2,0,2,3,8,0,2,3,Ancient History,Geography,English Extension,English Advanced,Mathematics Standard,,,8
-S156,6,4,0,5,2,1,4,2,8,0,2,6,Business Studies,Economics,Legal Studies,Mathematics Advanced,English Advanced,,,9
-S157,6,2,1,3,1,0,9,4,2,0,1,8,Industrial Technology Multimedia,Software Engineering,Design and Technology,Mathematics Advanced,English Advanced,,,9
-S158,2,5,0,10,2,0,2,5,5,0,2,2,Music,Drama,English Extension,English Advanced,Visual Arts,,,10
-S159,7,3,0,5,5,0,3,2,4,1,2,6,Biology,Health and Movement Science,English Advanced,Chemistry,Mathematics Advanced,,,9
-S160,9,2,1,3,2,0,8,2,2,1,1,9,Engineering Studies,Physics,Mathematics Extension 1,Software Engineering,English Advanced,,,9
-S161,3,2,1,4,3,1,3,3,3,0,5,4,Food Technology,Hospitality,Design and Technology,English Standard,Mathematics Standard,,,8
-S162,3,5,0,5,2,0,2,3,9,0,2,3,Legal Studies,Ancient History,English Extension,Society and Culture,English Advanced,,,9
-S163,10,2,0,2,2,0,5,1,2,1,1,10,Mathematics Extension 2,Mathematics Extension 1,Chemistry,Physics,English Advanced,,,10
-S164,6,3,0,5,5,0,3,2,4,1,2,5,Health and Movement Science,Biology,Chemistry,English Advanced,Mathematics Advanced,,,8
-S165,2,4,0,9,2,0,2,5,5,0,2,2,Visual Arts,Music,Drama,English Advanced,Society and Culture,,,9
-S166,6,2,1,3,1,0,9,4,2,0,1,8,Software Engineering,Industrial Technology Multimedia,Mathematics Advanced,English Advanced,Design and Technology,,,9
-S167,6,3,0,5,2,1,4,2,8,0,2,6,Economics,Business Studies,Geography,English Advanced,Mathematics Advanced,,,8
-S168,7,3,0,4,4,0,3,2,5,1,2,6,Biology,English Advanced,Mathematics Advanced,Chemistry,Geography,,,8
-S169,4,2,1,3,2,0,4,3,2,0,3,6,Mathematics Standard,English Standard,Industrial Technology Timber,Engineering Studies,Design and Technology,,,8
-S170,2,5,0,10,2,0,2,5,4,0,2,2,Drama,Music,Visual Arts,English Extension,Mathematics Standard,,,10
-S171,3,5,0,5,2,0,2,3,9,0,2,3,Legal Studies,English Extension,English Advanced,Ancient History,Geography,,,9
-S172,9,2,1,2,2,0,8,2,2,1,1,9,Software Engineering,Engineering Studies,Mathematics Extension 1,Physics,English Advanced,,,9
-S173,3,3,0,6,5,0,2,2,5,1,3,3,Community and Family Studies,Health and Movement Science,English Standard,Mathematics Standard,Biology,,,8
-S174,9,4,0,3,3,0,4,2,4,1,1,8,Chemistry,Mathematics Extension 1,Physics,English Extension,English Advanced,,,10
-S175,4,3,1,4,2,0,6,5,3,0,2,5,Design and Technology,Industrial Technology Multimedia,English Advanced,Mathematics Standard,Visual Arts,,,8
-S176,4,5,0,5,2,1,3,3,8,0,2,4,Business Studies,Legal Studies,English Extension,English Advanced,Geography,,,9
-S177,10,2,0,2,2,0,8,1,2,1,1,10,Mathematics Extension 2,Mathematics Extension 1,Physics,Chemistry,Software Engineering,,,10
-S178,3,2,1,5,3,1,2,3,4,0,5,4,Food Technology,Hospitality,English Standard,Community and Family Studies,Health and Movement Science,,,8
-S179,3,3,1,4,2,0,5,5,3,0,2,4,Visual Arts,Design and Technology,English Advanced,Mathematics Standard,Industrial Technology Multimedia,,,8
-S180,6,3,0,5,5,0,3,2,4,1,2,5,Biology,Chemistry,Health and Movement Science,English Advanced,Mathematics Advanced,,,9
-S181,3,5,0,5,2,0,2,3,9,0,2,3,Ancient History,English Extension,English Advanced,Society and Culture,Legal Studies,,,9
-S182,8,2,1,3,2,0,9,2,2,0,1,8,Software Engineering,Mathematics Advanced,English Advanced,Physics,Industrial Technology Multimedia,,,9
-S183,3,2,1,5,3,1,3,3,4,0,5,4,Hospitality,Food Technology,English Standard,Business Studies,Mathematics Standard,,,8
-S184,9,3,0,3,3,1,5,2,6,1,1,8,Mathematics Extension 1,Physics,Chemistry,English Advanced,Economics,,,9
-S185,3,3,0,8,4,0,2,4,5,0,2,3,Drama,English Advanced,Health and Movement Science,Mathematics Standard,Society and Culture,,,8
-S186,5,2,1,3,2,0,7,4,2,0,2,7,Industrial Technology Multimedia,Design and Technology,Engineering Studies,Mathematics Standard,English Standard,,,8
-S187,4,5,0,4,2,1,2,2,8,0,2,3,English Extension,English Advanced,Legal Studies,Ancient History,Business Studies,,,9
-S188,6,3,0,4,5,0,3,2,4,1,2,5,Biology,Mathematics Advanced,Chemistry,English Advanced,Community and Family Studies,,,8
-S189,8,2,1,2,1,0,9,2,2,0,1,9,Software Engineering,Mathematics Extension 1,English Advanced,Engineering Studies,Industrial Technology Multimedia,,,9
-S190,2,5,0,10,2,0,2,5,4,0,2,2,Music,Visual Arts,English Extension,English Advanced,Drama,,,10
-S191,5,4,0,5,2,1,3,2,8,0,2,5,Business Studies,Economics,Mathematics Standard,English Advanced,Legal Studies,,,8
-S192,10,2,0,2,3,0,6,1,2,1,1,10,Physics,Chemistry,Mathematics Extension 2,Mathematics Extension 1,English Advanced,,,10
-S193,4,2,1,3,2,0,4,3,2,0,2,6,Design and Technology,Engineering Studies,Mathematics Standard,English Standard,Industrial Technology Timber,,,8
-S194,4,3,0,6,5,0,2,2,5,1,3,4,Health and Movement Science,Biology,Mathematics Standard,English Advanced,Community and Family Studies,,,9
-S195,4,5,0,5,2,1,3,3,9,0,2,4,Legal Studies,English Extension,English Advanced,Society and Culture,Economics,,,9
-S196,9,2,1,3,2,0,7,5,2,1,1,8,Chemistry,Physics,Design and Technology,Mathematics Advanced,English Advanced,,,9
-S197,9,2,1,2,2,0,8,5,2,1,1,9,Chemistry,Physics,Software Engineering,Mathematics Extension 1,English Standard,,,10
-S198,8,2,1,3,3,0,6,4,2,1,1,8,Chemistry,Physics,Design and Technology,Mathematics Advanced,English Standard,,,9
-S199,9,3,1,3,2,0,7,4,2,1,1,8,Chemistry,Physics,Software Engineering,Mathematics Advanced,English Advanced,,,9
-S200,8,2,1,3,2,0,5,5,3,1,1,7,Chemistry,Physics,Design and Technology,Mathematics Extension 1,English Standard,,,9
-S201,9,2,0,3,3,0,6,5,2,1,1,8,Chemistry,Physics,Mathematics Extension 1,Mathematics Advanced,English Standard,,,9
-S202,8,2,1,4,2,0,7,4,2,1,1,8,Chemistry,Physics,Design and Technology,Software Engineering,English Advanced,,,9
-S203,9,2,1,3,2,0,7,5,2,1,2,8,Physics,Chemistry,Design and Technology,Mathematics Extension 1,English Standard,,,10
-S204,8,2,1,3,3,0,6,4,2,1,1,7,Chemistry,Biology,Design and Technology,Mathematics Advanced,English Standard,,,8
-S205,9,2,1,2,2,0,8,4,2,1,1,9,Physics,Chemistry,Software Engineering,Mathematics Extension 1,English Standard,,,10
+S001,4,2,0,1,10,0,5,2,6,0,6,5,Industrial Technology Multimedia,Physics,Health and Movement Science,Physics,Visual Arts,Hospitality,English Standard,9
+S002,3,4,0,4,8,1,5,2,2,1,6,5,Mathematics Advanced,Biblical Studies,Industrial Technology Multimedia,Health and Movement Science,School of Languages,Drama,,10
+S003,10,4,1,6,2,0,7,6,4,1,6,8,English Extension,Software Engineering,Mathematics Advanced,Physics,Mathematics Standard,Hospitality,Health and Movement Science,9
+S004,5,8,1,8,6,1,2,4,8,0,4,6,Biology,Drama,Society and Culture,Business Studies,Health and Movement Science,Legal Studies,Biblical Studies,10
+S005,9,4,1,5,8,0,1,6,2,1,6,7,English Standard,Physics,Visual Arts,Industrial Technology Multimedia,Mathematics Extension 2,Biology,English Extension,7
+S006,6,4,1,3,8,1,3,4,3,0,6,2,Biology,Health and Movement Science,Biblical Studies,Drama,Biblical Studies,Food Technology,,9
+S007,8,2,0,4,6,0,9,4,2,1,2,9,Mathematics Extension 1,Geography,Mathematics Advanced,Biology,Mathematics Standard,Health and Movement Science,,9
+S008,3,8,1,3,4,1,2,6,9,1,6,1,Engineering Studies,Physics,English Standard,School of Languages,English Advanced,English Extension,,7
+S009,7,2,0,6,8,0,3,2,5,1,4,10,Engineering Studies,Physics,Mathematics Advanced,Visual Arts,Mathematics Extension 1,Biology,,7
+S010,8,2,1,2,6,0,7,4,3,1,6,8,Visual Arts,Mathematics Standard,Visual Arts,Mathematics Extension 1,Health and Movement Science,Mathematics Extension 2,Hospitality,8
+S011,2,4,0,6,10,0,1,4,1,0,4,1,English Extension,English Extension,Hospitality,Drama,Hospitality,Health and Movement Science,,9
+S012,10,6,1,1,10,1,4,2,6,1,6,10,Mathematics Extension 1,Physics,English Advanced,Hospitality,Health and Movement Science,Biology,,8
+S013,3,6,0,9,6,0,6,8,2,0,6,3,Visual Arts,Health and Movement Science,Society and Culture,Commerce,Drama,Music,,7
+S014,4,8,0,7,2,1,1,6,9,0,2,3,Biology,English Extension,Community and Family Studies,Legal Studies,Business Studies,Mathematics Standard,,7
+S015,5,4,1,6,4,1,7,2,6,0,8,9,Hospitality,Ancient History,Health and Movement Science,Food Technology,Visual Arts,Engineering Studies,Ancient History,9
+S016,3,6,0,10,2,1,5,8,1,1,2,2,Health and Movement Science,Music,Visual Arts,English Advanced,Physics,Drama,,7
+S017,4,10,1,2,4,1,2,6,8,1,2,1,English Standard,English Extension,Music,English Advanced,Physics,Health and Movement Science,,7
+S018,3,4,1,7,2,0,1,8,4,1,4,5,English Standard,Physics,Drama,Visual Arts,Mathematics Extension 1,Music,School of Languages,8
+S019,6,2,0,8,6,1,5,8,3,1,2,1,Commerce,Health and Movement Science,Design and Technology,Visual Arts,Music,Drama,Physics,9
+S020,6,10,0,7,4,1,3,6,7,1,4,1,Biblical Studies,Legal Studies,Biology,Industrial Technology Timber,Music,Geography,,10
+S021,10,2,1,2,2,1,9,4,2,0,6,7,Community and Family Studies,Mathematics Standard,Commerce,Business Studies,Mathematics Extension 2,Mathematics Extension 1,,10
+S022,5,4,0,2,10,1,2,2,4,0,6,4,English Advanced,English Extension,English Advanced,Music,Health and Movement Science,Software Engineering,Physics,9
+S023,4,10,0,10,4,1,2,2,9,0,2,2,Commerce,Food Technology,Community and Family Studies,Legal Studies,Mathematics Advanced,Health and Movement Science,,8
+S024,4,10,1,7,4,1,6,4,10,1,4,3,Health and Movement Science,Economics,Health and Movement Science,Community and Family Studies,Society and Culture,Drama,,7
+S025,10,6,0,3,6,1,8,2,5,1,2,7,Mathematics Standard,Biology,Biology,Mathematics Advanced,Mathematics Extension 1,English Advanced,,8
+S026,2,10,1,3,2,0,2,4,8,0,4,4,Health and Movement Science,English Standard,Software Engineering,Biology,English Extension,English Advanced,,10
+S027,10,2,0,5,2,1,8,4,4,1,4,9,Software Engineering,Health and Movement Science,Mathematics Advanced,Health and Movement Science,Mathematics Extension 1,Health and Movement Science,,10
+S028,1,4,0,10,6,1,6,10,5,0,6,1,Health and Movement Science,Drama,Music,Health and Movement Science,Visual Arts,Mathematics Standard,,7
+S029,10,2,1,2,4,1,10,2,4,0,4,9,Mathematics Advanced,Software Engineering,Music,Biology,Health and Movement Science,Mathematics Extension 2,,8
+S030,1,6,1,4,2,0,9,2,6,1,10,8,Biology,Industrial Technology Timber,Food Technology,Hospitality,Physics,English Standard,Music,8
+S031,9,4,1,4,4,0,9,4,1,1,2,9,English Advanced,Software Engineering,Mathematics Standard,Mathematics Advanced,Music,Physics,,7
+S032,5,2,1,8,2,1,3,8,4,1,2,6,Music,Mathematics Extension 2,Drama,English Advanced,Visual Arts,English Standard,,7
+S033,9,6,0,2,10,0,3,6,1,1,2,10,Hospitality,Physics,Biology,Mathematics Extension 2,Biblical Studies,English Advanced,,10
+S034,3,8,1,8,4,1,4,6,9,0,2,4,Health and Movement Science,Drama,School of Languages,Legal Studies,Community and Family Studies,Engineering Studies,,10
+S035,4,6,0,9,4,0,1,8,5,1,6,2,Music,English Standard,Drama,Health and Movement Science,Visual Arts,Commerce,,7
+S036,9,6,1,3,10,0,2,4,4,1,4,10,Visual Arts,Mathematics Extension 1,Health and Movement Science,Physics,Biology,Health and Movement Science,,8
+S037,4,10,1,7,2,1,5,2,7,0,4,2,Visual Arts,Economics,Biblical Studies,Society and Culture,Industrial Technology Timber,Health and Movement Science,,9
+S038,2,10,1,1,4,0,5,2,7,0,2,4,English Standard,English Advanced,Engineering Studies,Design and Technology,Mathematics Extension 1,English Extension,,7
+S039,2,4,1,5,6,1,9,4,2,0,8,10,Mathematics Extension 1,Hospitality,Health and Movement Science,Industrial Technology Multimedia,Biology,Food Technology,,9
+S040,2,8,1,6,2,0,6,6,10,1,6,2,Visual Arts,English Standard,English Advanced,English Extension,Biblical Studies,Mathematics Standard,,10
+S041,3,6,1,1,2,1,10,2,5,0,8,8,Hospitality,Mathematics Extension 2,Music,Industrial Technology Multimedia,Biology,Design and Technology,,9
+S042,8,4,0,6,8,0,6,4,5,1,4,9,Health and Movement Science,Geography,Health and Movement Science,English Extension,Biology,Physics,,8
+S043,3,8,0,7,2,1,5,2,7,0,4,1,Society and Culture,English Advanced,Mathematics Extension 1,Commerce,Community and Family Studies,English Extension,,7
+S044,2,2,0,1,8,1,3,4,6,1,2,4,Health and Movement Science,Mathematics Standard,Industrial Technology Timber,Geography,Visual Arts,Biology,,9
+S045,1,4,0,8,4,1,1,10,5,0,2,2,English Extension,Visual Arts,Biology,Health and Movement Science,Music,Drama,,8
+S046,5,6,1,8,4,0,6,8,5,0,4,2,Music,Visual Arts,Mathematics Extension 2,Drama,Ancient History,Biology,,8
+S047,1,8,0,8,4,1,1,6,10,1,2,2,Physics,Community and Family Studies,Visual Arts,Geography,Hospitality,Ancient History,Visual Arts,10
+S048,3,8,0,7,4,1,6,4,9,0,4,3,English Advanced,Geography,Community and Family Studies,English Extension,Visual Arts,Biblical Studies,,7
+S049,4,10,0,2,6,0,1,4,9,1,6,2,English Advanced,Health and Movement Science,English Standard,English Extension,Design and Technology,Biology,English Standard,8
+S050,10,4,0,6,10,1,1,6,6,1,6,7,English Standard,Food Technology,Biology,Society and Culture,Industrial Technology Multimedia,Physics,,10
+S051,4,2,1,10,6,1,3,8,5,0,6,4,Music,Biology,Mathematics Advanced,Drama,Visual Arts,Legal Studies,,7
+S052,7,4,1,5,8,0,3,2,3,1,2,9,Mathematics Standard,Health and Movement Science,Music,English Advanced,Physics,Biology,,10
+S053,5,6,0,7,4,1,5,10,1,1,6,6,School of Languages,Music,Hospitality,Drama,Visual Arts,Hospitality,Mathematics Extension 1,7
+S054,3,6,0,10,4,0,4,8,6,1,6,1,Health and Movement Science,Food Technology,Health and Movement Science,Visual Arts,Drama,Music,Physics,8
+S055,8,2,1,2,6,0,10,6,1,1,2,9,Software Engineering,Health and Movement Science,Mathematics Extension 1,Health and Movement Science,Mathematics Standard,English Advanced,,9
+S056,9,4,1,1,10,1,1,4,3,1,6,10,Biology,English Standard,Industrial Technology Timber,Industrial Technology Multimedia,Drama,Physics,,9
+S057,7,2,1,1,4,0,8,4,5,0,6,10,Health and Movement Science,Mathematics Extension 1,Biology,Mathematics Extension 2,Mathematics Advanced,Drama,,7
+S058,10,2,1,3,8,0,3,6,4,1,4,9,Physics,Drama,Biology,Society and Culture,Mathematics Extension 1,Visual Arts,,7
+S059,3,10,0,6,6,0,3,4,8,1,4,5,English Standard,Physics,Physics,English Extension,English Advanced,Engineering Studies,,10
+S060,6,2,1,1,10,0,6,6,6,0,2,2,Economics,Music,Mathematics Extension 1,Mathematics Advanced,Design and Technology,Health and Movement Science,,8
+S061,3,6,0,9,4,0,1,8,1,0,2,4,Drama,Society and Culture,Biology,Health and Movement Science,Visual Arts,Music,,7
+S062,1,4,0,10,4,1,5,10,4,1,2,4,Drama,Visual Arts,Design and Technology,Music,Mathematics Extension 1,Biology,,9
+S063,5,4,0,8,4,0,6,10,1,0,6,5,Visual Arts,Physics,Drama,Geography,Music,Industrial Technology Timber,,7
+S064,5,2,1,1,10,1,4,4,2,1,6,1,Health and Movement Science,Music,Music,Visual Arts,Drama,Legal Studies,,9
+S065,2,8,0,7,4,1,1,2,10,1,4,4,Biology,Mathematics Advanced,Economics,English Standard,Society and Culture,Ancient History,,10
+S066,5,8,0,4,4,0,2,4,7,1,4,5,Software Engineering,English Standard,English Advanced,English Extension,Geography,Commerce,,9
+S067,8,6,1,4,6,1,10,2,4,0,6,9,Physics,Engineering Studies,Mathematics Extension 1,Health and Movement Science,Mathematics Extension 2,Mathematics Standard,,7
+S068,6,2,1,5,6,1,8,4,2,1,10,10,Hospitality,Industrial Technology Timber,Design and Technology,Health and Movement Science,Biology,Legal Studies,,8
+S069,6,4,1,5,2,1,8,2,4,0,8,9,Community and Family Studies,Engineering Studies,Food Technology,Health and Movement Science,Health and Movement Science,Hospitality,,8
+S070,6,10,0,4,2,1,5,4,7,1,2,1,Visual Arts,English Standard,Music,Biology,English Advanced,English Extension,Biology,10
+S071,5,6,1,3,10,0,2,4,5,0,2,2,Biblical Studies,Mathematics Extension 1,Physics,Health and Movement Science,Physics,English Advanced,,7
+S072,6,2,0,2,10,1,6,4,5,0,4,3,Biology,English Extension,Health and Movement Science,English Standard,Music,Economics,,8
+S073,6,10,1,2,2,0,4,2,10,1,6,1,English Advanced,English Standard,Software Engineering,Legal Studies,Music,English Extension,Society and Culture,7
+S074,9,2,0,2,8,0,2,6,3,1,2,10,Mathematics Extension 2,English Advanced,Physics,Biology,Health and Movement Science,English Extension,,7
+S075,1,10,0,7,2,1,6,2,7,0,6,3,Society and Culture,Food Technology,Economics,Biblical Studies,Biology,Mathematics Standard,,10
+S076,8,6,0,6,2,1,9,4,5,0,2,8,Industrial Technology Timber,English Advanced,Music,Mathematics Extension 1,Mathematics Standard,Mathematics Advanced,,8
+S077,8,2,1,2,4,0,7,2,4,1,2,8,Industrial Technology Multimedia,Biblical Studies,Mathematics Advanced,Software Engineering,Engineering Studies,Mathematics Extension 2,,9
+S078,5,4,1,4,4,1,9,4,1,0,8,9,Visual Arts,Food Technology,Physics,Hospitality,Biology,Design and Technology,,8
+S079,5,8,0,9,2,1,2,2,10,0,2,2,Software Engineering,Engineering Studies,Biblical Studies,Business Studies,School of Languages,English Standard,,10
+S080,6,2,1,7,6,1,3,10,4,1,6,3,English Standard,Industrial Technology Multimedia,Physics,Visual Arts,Drama,Music,Community and Family Studies,10
+S081,5,8,1,1,2,0,2,2,7,0,4,2,Health and Movement Science,Biology,English Extension,English Standard,English Advanced,Engineering Studies,,8
+S082,5,6,0,3,8,0,4,4,3,1,4,1,Economics,Health and Movement Science,Drama,Engineering Studies,English Advanced,Geography,,8
+S083,3,6,0,5,8,0,4,2,5,0,2,6,Visual Arts,Mathematics Standard,Biology,Industrial Technology Multimedia,English Advanced,Health and Movement Science,,9
+S084,9,2,0,1,10,1,6,2,5,1,6,10,Biology,Mathematics Extension 1,Music,Physics,Health and Movement Science,Legal Studies,,8
+S085,1,8,1,5,6,1,3,6,7,0,6,6,English Standard,English Extension,Geography,Society and Culture,English Advanced,Visual Arts,,7
+S086,10,4,0,3,8,1,6,4,3,1,6,10,Mathematics Advanced,Physics,Biology,Ancient History,Engineering Studies,Drama,,10
+S087,4,2,1,1,6,0,9,2,6,1,8,9,Biology,Industrial Technology Timber,Software Engineering,Industrial Technology Multimedia,Legal Studies,Engineering Studies,Physics,8
+S088,1,2,0,2,10,0,4,2,6,1,2,1,Physics,Geography,Music,Ancient History,Health and Movement Science,Physics,,9
+S089,2,4,1,2,8,0,3,6,3,1,2,4,Biblical Studies,Health and Movement Science,Drama,Mathematics Standard,Physics,English Extension,,7
+S090,1,8,1,1,4,1,6,6,10,0,2,5,English Standard,Industrial Technology Timber,English Extension,Industrial Technology Multimedia,Health and Movement Science,English Advanced,,9
+S091,4,6,1,7,6,1,6,10,2,1,2,4,Mathematics Extension 1,Health and Movement Science,Music,Visual Arts,Physics,Drama,,9
+S092,6,10,0,5,6,1,4,6,7,1,2,5,English Standard,Mathematics Extension 2,English Extension,Society and Culture,Hospitality,English Advanced,,7
+S093,8,4,0,5,4,1,10,2,6,0,6,9,Mathematics Advanced,Economics,Mathematics Extension 2,Hospitality,Mathematics Standard,English Standard,,8
+S094,4,8,1,10,4,1,3,6,8,0,4,5,Society and Culture,Mathematics Extension 2,Biology,Ancient History,Business Studies,Software Engineering,,8
+S095,6,2,1,10,4,1,3,10,3,1,6,1,Software Engineering,Music,Visual Arts,Health and Movement Science,Drama,Physics,,9
+S096,2,8,1,3,6,1,3,2,9,1,6,1,English Extension,Physics,Ancient History,Business Studies,English Standard,English Advanced,English Advanced,8
+S097,4,10,1,5,2,1,4,4,7,1,6,1,Mathematics Standard,Physics,English Standard,English Advanced,Drama,English Extension,,8
+S098,6,4,1,3,4,1,9,4,3,0,8,7,Mathematics Extension 1,Food Technology,Health and Movement Science,School of Languages,Industrial Technology Multimedia,Design and Technology,English Advanced,7
+S099,3,6,0,10,4,1,1,10,3,1,6,4,Visual Arts,Engineering Studies,Engineering Studies,Drama,Health and Movement Science,Music,,10
+S100,8,4,1,5,4,0,10,6,3,1,4,8,Biology,Mathematics Standard,Engineering Studies,English Extension,Mathematics Extension 2,Software Engineering,,7
+SB02094,8,8,1,2,4,1,7,8,6,1,8,7,English Advanced,Mathematics Standard,Software Engineering,Physics,Design and Technology,Industrial Technology Multimedia,,8
+S101,9,4,0,3,6,0,5,4,3,1,2,8,Chemistry,Physics,Mathematics Advanced,English Advanced,,,,9
+S102,7,6,0,4,10,0,3,4,4,1,4,6,Chemistry,Biology,Mathematics Advanced,English Advanced,Health and Movement Science,,,9
+S103,10,4,0,2,4,0,6,2,2,1,2,9,Chemistry,Physics,Mathematics Extension 1,Mathematics Extension 2,English Advanced,,,10
+S104,6,8,0,5,8,1,3,6,6,1,4,5,Chemistry,Biology,Mathematics Standard,English Advanced,Geography,,,8
+S105,9,4,1,3,4,0,8,4,2,1,2,9,Chemistry,Physics,Mathematics Advanced,Software Engineering,English Advanced,,,9
+S106,7,10,0,4,10,0,2,6,5,1,4,5,Chemistry,Biology,English Extension,Mathematics Advanced,English Advanced,,,9
+S107,8,6,0,4,4,1,5,4,7,1,2,7,Chemistry,Physics,Mathematics Advanced,Economics,English Advanced,,,8
+S108,6,6,1,4,8,0,5,8,3,1,6,6,Chemistry,Biology,Design and Technology,Mathematics Standard,English Advanced,,,8
+S109,7,8,0,7,6,0,3,10,4,1,4,5,Chemistry,Visual Arts,Mathematics Advanced,English Advanced,Drama,,,7
+S110,10,4,0,2,6,0,7,2,2,1,2,10,Chemistry,Physics,Mathematics Extension 2,Mathematics Extension 1,English Advanced,,,10
+S111,8,6,0,3,10,0,3,4,4,1,4,6,Chemistry,Biology,Mathematics Advanced,Health and Movement Science,English Advanced,,,9
+S112,9,4,1,3,4,0,6,4,3,1,2,9,Chemistry,Physics,Engineering Studies,Mathematics Advanced,English Advanced,,,9
+S113,10,4,0,2,4,0,9,2,2,1,2,10,Chemistry,Physics,Software Engineering,Mathematics Extension 1,English Advanced,,,10
+S114,10,4,0,2,6,0,6,2,2,1,2,9,Chemistry,Physics,Mathematics Extension 2,Mathematics Extension 1,English Advanced,,,10
+S115,9,4,1,3,4,0,9,4,3,1,2,9,Physics,Software Engineering,Engineering Studies,Mathematics Advanced,English Advanced,,,9
+S116,9,6,0,4,6,0,5,4,6,1,2,8,Chemistry,Physics,Mathematics Extension 1,Legal Studies,English Advanced,,,9
+S117,9,6,0,3,4,1,10,4,5,0,2,9,Software Engineering,Mathematics Extension 1,Physics,English Advanced,Economics,,,9
+S118,10,10,0,4,6,0,5,4,4,1,2,9,Mathematics Extension 2,Mathematics Extension 1,Chemistry,Physics,English Extension,,,10
+S119,8,6,0,5,10,0,3,4,4,1,4,6,Biology,Chemistry,Mathematics Advanced,English Advanced,Health and Movement Science,,,9
+S120,9,4,1,2,4,0,10,4,2,1,2,10,Software Engineering,Mathematics Extension 1,Engineering Studies,Physics,English Advanced,,,10
+S121,5,4,1,4,4,0,8,8,3,0,4,7,Industrial Technology Multimedia,Software Engineering,Mathematics Standard,English Standard,Design and Technology,,,8
+S122,8,8,0,5,6,0,4,6,6,1,4,7,Physics,Chemistry,Mathematics Advanced,English Advanced,Society and Culture,,,8
+S123,9,4,1,2,2,0,10,6,2,0,2,9,Software Engineering,Industrial Technology Multimedia,Mathematics Extension 1,Physics,English Advanced,,,9
+S124,4,4,1,4,4,1,6,10,3,0,8,6,Design and Technology,Industrial Technology Multimedia,Mathematics Standard,English Standard,Food Technology,,,8
+S125,7,8,0,5,4,1,4,4,8,0,4,6,Mathematics Advanced,Economics,Business Studies,English Advanced,Legal Studies,,,9
+S126,10,6,0,3,6,0,5,4,5,1,2,9,Mathematics Extension 2,Chemistry,Physics,English Advanced,Geography,,,10
+S127,2,10,0,10,4,0,2,10,5,0,4,2,Drama,Music,English Extension,Visual Arts,English Advanced,,,9
+S128,3,10,0,9,4,0,2,6,7,0,4,3,Drama,English Extension,Legal Studies,Society and Culture,English Advanced,,,9
+S129,3,6,1,5,6,0,3,10,4,0,4,4,Visual Arts,Design and Technology,Mathematics Standard,English Advanced,Health and Movement Science,,,8
+S130,3,6,0,9,8,0,2,8,4,0,4,3,Music,Drama,English Advanced,Health and Movement Science,Mathematics Standard,,,9
+S131,5,10,0,5,4,1,3,4,9,0,4,5,Legal Studies,Economics,English Extension,Business Studies,English Advanced,,,9
+S132,3,10,0,5,4,0,2,6,9,0,4,3,Ancient History,Legal Studies,English Extension,Society and Culture,English Advanced,,,9
+S133,6,8,0,5,4,1,5,4,8,0,4,6,Economics,Business Studies,Mathematics Advanced,English Advanced,Legal Studies,,,8
+S134,4,8,0,4,4,0,2,6,8,1,4,4,Geography,Ancient History,English Advanced,Legal Studies,Mathematics Standard,,,8
+S135,3,10,0,6,4,0,2,6,9,0,4,3,Society and Culture,English Extension,Legal Studies,English Advanced,Ancient History,,,9
+S136,7,6,0,4,4,1,8,4,6,0,4,7,Business Studies,Software Engineering,Mathematics Advanced,English Advanced,Economics,,,8
+S137,4,6,0,7,10,0,2,4,4,1,6,4,Health and Movement Science,Biology,English Advanced,Mathematics Standard,Community and Family Studies,,,9
+S138,4,6,0,6,10,0,2,4,5,1,6,4,Health and Movement Science,Biology,Mathematics Standard,English Advanced,Community and Family Studies,,,8
+S139,3,4,1,4,6,1,2,6,4,0,10,4,Food Technology,Hospitality,English Standard,Business Studies,Mathematics Standard,,,8
+S140,3,4,1,5,6,1,3,8,4,0,10,5,Hospitality,Food Technology,Business Studies,English Standard,Design and Technology,,,9
+S141,4,6,1,4,4,0,7,10,3,0,4,6,Industrial Technology Multimedia,Design and Technology,Visual Arts,English Advanced,Mathematics Standard,,,8
+S142,8,4,1,3,4,0,5,6,3,1,2,9,Engineering Studies,Mathematics Advanced,Physics,English Advanced,Design and Technology,,,9
+S143,7,4,1,3,2,0,8,6,2,0,2,9,Engineering Studies,Industrial Technology Multimedia,Software Engineering,Mathematics Advanced,English Standard,,,9
+S144,4,4,1,3,4,0,4,6,2,0,6,6,Industrial Technology Timber,Engineering Studies,Design and Technology,English Standard,Mathematics Standard,,,8
+S145,2,8,0,8,4,0,2,10,4,0,4,2,Visual Arts,Music,English Advanced,Drama,Mathematics Standard,,,9
+S146,3,10,0,5,4,0,2,6,8,0,4,3,School of Languages,English Extension,Society and Culture,English Advanced,Ancient History,,,9
+S147,3,6,0,6,10,0,2,4,6,1,6,3,Community and Family Studies,Health and Movement Science,English Standard,Biology,Mathematics Standard,,,8
+S148,9,4,0,2,6,0,8,2,2,1,2,9,Mathematics Extension 1,Chemistry,Physics,English Advanced,Software Engineering,,,10
+S149,5,8,0,5,4,1,3,4,8,0,4,5,Economics,Business Studies,Legal Studies,English Advanced,Mathematics Standard,,,8
+S150,4,6,0,6,10,0,2,4,5,1,6,4,Biology,Health and Movement Science,Mathematics Standard,English Advanced,Community and Family Studies,,,9
+S151,9,4,0,3,8,0,5,2,3,1,2,8,Mathematics Extension 1,Mathematics Advanced,Physics,Chemistry,English Advanced,,,9
+S152,9,4,0,2,4,0,10,2,2,1,2,9,Software Engineering,Mathematics Extension 1,English Advanced,Physics,Chemistry,,,10
+S153,3,6,0,8,4,1,3,10,4,0,8,3,Drama,Visual Arts,English Advanced,Mathematics Standard,Hospitality,,,8
+S154,7,6,0,4,10,0,3,4,5,1,4,6,Biology,Chemistry,English Advanced,Mathematics Advanced,Legal Studies,,,9
+S155,4,10,0,4,4,0,2,6,8,0,4,3,Ancient History,Geography,English Extension,English Advanced,Mathematics Standard,,,8
+S156,6,8,0,5,4,1,4,4,8,0,4,6,Business Studies,Economics,Legal Studies,Mathematics Advanced,English Advanced,,,9
+S157,6,4,1,3,2,0,9,8,2,0,2,8,Industrial Technology Multimedia,Software Engineering,Design and Technology,Mathematics Advanced,English Advanced,,,9
+S158,2,10,0,10,4,0,2,10,5,0,4,2,Music,Drama,English Extension,English Advanced,Visual Arts,,,10
+S159,7,6,0,5,10,0,3,4,4,1,4,6,Biology,Health and Movement Science,English Advanced,Chemistry,Mathematics Advanced,,,9
+S160,9,4,1,3,4,0,8,4,2,1,2,9,Engineering Studies,Physics,Mathematics Extension 1,Software Engineering,English Advanced,,,9
+S161,3,4,1,4,6,1,3,6,3,0,10,4,Food Technology,Hospitality,Design and Technology,English Standard,Mathematics Standard,,,8
+S162,3,10,0,5,4,0,2,6,9,0,4,3,Legal Studies,Ancient History,English Extension,Society and Culture,English Advanced,,,9
+S163,10,4,0,2,4,0,5,2,2,1,2,10,Mathematics Extension 2,Mathematics Extension 1,Chemistry,Physics,English Advanced,,,10
+S164,6,6,0,5,10,0,3,4,4,1,4,5,Health and Movement Science,Biology,Chemistry,English Advanced,Mathematics Advanced,,,8
+S165,2,8,0,9,4,0,2,10,5,0,4,2,Visual Arts,Music,Drama,English Advanced,Society and Culture,,,9
+S166,6,4,1,3,2,0,9,8,2,0,2,8,Software Engineering,Industrial Technology Multimedia,Mathematics Advanced,English Advanced,Design and Technology,,,9
+S167,6,6,0,5,4,1,4,4,8,0,4,6,Economics,Business Studies,Geography,English Advanced,Mathematics Advanced,,,8
+S168,7,6,0,4,8,0,3,4,5,1,4,6,Biology,English Advanced,Mathematics Advanced,Chemistry,Geography,,,8
+S169,4,4,1,3,4,0,4,6,2,0,6,6,Mathematics Standard,English Standard,Industrial Technology Timber,Engineering Studies,Design and Technology,,,8
+S170,2,10,0,10,4,0,2,10,4,0,4,2,Drama,Music,Visual Arts,English Extension,Mathematics Standard,,,10
+S171,3,10,0,5,4,0,2,6,9,0,4,3,Legal Studies,English Extension,English Advanced,Ancient History,Geography,,,9
+S172,9,4,1,2,4,0,8,4,2,1,2,9,Software Engineering,Engineering Studies,Mathematics Extension 1,Physics,English Advanced,,,9
+S173,3,6,0,6,10,0,2,4,5,1,6,3,Community and Family Studies,Health and Movement Science,English Standard,Mathematics Standard,Biology,,,8
+S174,9,8,0,3,6,0,4,4,4,1,2,8,Chemistry,Mathematics Extension 1,Physics,English Extension,English Advanced,,,10
+S175,4,6,1,4,4,0,6,10,3,0,4,5,Design and Technology,Industrial Technology Multimedia,English Advanced,Mathematics Standard,Visual Arts,,,8
+S176,4,10,0,5,4,1,3,6,8,0,4,4,Business Studies,Legal Studies,English Extension,English Advanced,Geography,,,9
+S177,10,4,0,2,4,0,8,2,2,1,2,10,Mathematics Extension 2,Mathematics Extension 1,Physics,Chemistry,Software Engineering,,,10
+S178,3,4,1,5,6,1,2,6,4,0,10,4,Food Technology,Hospitality,English Standard,Community and Family Studies,Health and Movement Science,,,8
+S179,3,6,1,4,4,0,5,10,3,0,4,4,Visual Arts,Design and Technology,English Advanced,Mathematics Standard,Industrial Technology Multimedia,,,8
+S180,6,6,0,5,10,0,3,4,4,1,4,5,Biology,Chemistry,Health and Movement Science,English Advanced,Mathematics Advanced,,,9
+S181,3,10,0,5,4,0,2,6,9,0,4,3,Ancient History,English Extension,English Advanced,Society and Culture,Legal Studies,,,9
+S182,8,4,1,3,4,0,9,4,2,0,2,8,Software Engineering,Mathematics Advanced,English Advanced,Physics,Industrial Technology Multimedia,,,9
+S183,3,4,1,5,6,1,3,6,4,0,10,4,Hospitality,Food Technology,English Standard,Business Studies,Mathematics Standard,,,8
+S184,9,6,0,3,6,1,5,4,6,1,2,8,Mathematics Extension 1,Physics,Chemistry,English Advanced,Economics,,,9
+S185,3,6,0,8,8,0,2,8,5,0,4,3,Drama,English Advanced,Health and Movement Science,Mathematics Standard,Society and Culture,,,8
+S186,5,4,1,3,4,0,7,8,2,0,4,7,Industrial Technology Multimedia,Design and Technology,Engineering Studies,Mathematics Standard,English Standard,,,8
+S187,4,10,0,4,4,1,2,4,8,0,4,3,English Extension,English Advanced,Legal Studies,Ancient History,Business Studies,,,9
+S188,6,6,0,4,10,0,3,4,4,1,4,5,Biology,Mathematics Advanced,Chemistry,English Advanced,Community and Family Studies,,,8
+S189,8,4,1,2,2,0,9,4,2,0,2,9,Software Engineering,Mathematics Extension 1,English Advanced,Engineering Studies,Industrial Technology Multimedia,,,9
+S190,2,10,0,10,4,0,2,10,4,0,4,2,Music,Visual Arts,English Extension,English Advanced,Drama,,,10
+S191,5,8,0,5,4,1,3,4,8,0,4,5,Business Studies,Economics,Mathematics Standard,English Advanced,Legal Studies,,,8
+S192,10,4,0,2,6,0,6,2,2,1,2,10,Physics,Chemistry,Mathematics Extension 2,Mathematics Extension 1,English Advanced,,,10
+S193,4,4,1,3,4,0,4,6,2,0,4,6,Design and Technology,Engineering Studies,Mathematics Standard,English Standard,Industrial Technology Timber,,,8
+S194,4,6,0,6,10,0,2,4,5,1,6,4,Health and Movement Science,Biology,Mathematics Standard,English Advanced,Community and Family Studies,,,9
+S195,4,10,0,5,4,1,3,6,9,0,4,4,Legal Studies,English Extension,English Advanced,Society and Culture,Economics,,,9
+S196,9,4,1,3,4,0,7,10,2,1,2,8,Chemistry,Physics,Design and Technology,Mathematics Advanced,English Advanced,,,9
+S197,9,4,1,2,4,0,8,10,2,1,2,9,Chemistry,Physics,Software Engineering,Mathematics Extension 1,English Standard,,,10
+S198,8,4,1,3,6,0,6,8,2,1,2,8,Chemistry,Physics,Design and Technology,Mathematics Advanced,English Standard,,,9
+S199,9,6,1,3,4,0,7,8,2,1,2,8,Chemistry,Physics,Software Engineering,Mathematics Advanced,English Advanced,,,9
+S200,8,4,1,3,4,0,5,10,3,1,2,7,Chemistry,Physics,Design and Technology,Mathematics Extension 1,English Standard,,,9
+S201,9,4,0,3,6,0,6,10,2,1,2,8,Chemistry,Physics,Mathematics Extension 1,Mathematics Advanced,English Standard,,,9
+S202,8,4,1,4,4,0,7,8,2,1,2,8,Chemistry,Physics,Design and Technology,Software Engineering,English Advanced,,,9
+S203,9,4,1,3,4,0,7,10,2,1,4,8,Physics,Chemistry,Design and Technology,Mathematics Extension 1,English Standard,,,10
+S204,8,4,1,3,6,0,6,8,2,1,2,7,Chemistry,Biology,Design and Technology,Mathematics Advanced,English Standard,,,8
+S205,9,4,1,2,4,0,8,8,2,1,2,9,Physics,Chemistry,Software Engineering,Mathematics Extension 1,English Standard,,,10
