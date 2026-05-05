@@ -59,6 +59,7 @@ SUBJECT_CLUSTER_MAP: dict[str, str] = {
     "Hospitality":              "TAS",
     "Industrial Technology Multimedia": "TAS",
     "Industrial Technology Timber":     "TAS",
+    "Textiles and Design":      "TAS",
 
     # Visual and Performing Arts
     "Drama":                    "Visual and Performing Arts",
